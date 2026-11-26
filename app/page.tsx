@@ -338,8 +338,8 @@ export default function Home() {
 
       {/* Navigation */}
       <nav className="nav-shell" aria-label="Primary navigation">
-        <button className="brand" onClick={() => scrollTo("top")} aria-label="Back to top">
-          <span className="brand-slash" />
+        <button className="brand summit-nav-brand" onClick={() => scrollTo("top")} aria-label="Business Summit – South Korea, back to top">
+          <img src={sitePath("/images/booking-ministry-logo.webp")} alt="Booking Ministry" width={700} height={340} />
           <span>
             Business Summit
             <small>SOUTH KOREA · 2026</small>

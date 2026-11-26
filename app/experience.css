@@ -404,3 +404,9 @@ html[data-theme="light"] .summit-footer-organizer small { color: #724c23; }
 .experience .summit-main-title span { display: block; }
 .experience .summit-organizer-credit { display: inline-block; font-size: 14px; color: #f6e0ba; text-decoration: underline; text-underline-offset: 4px; }
 @media (max-width: 900px) { .experience .summit-main-logo { width: min(100%, 220px); } }
+.experience .summit-nav-brand { gap: 9px; text-align: left; }
+.summit-nav-brand img { display: block; width: clamp(64px, 7.5vw, 112px); height: auto; border-radius: 5px; flex: none; }
+@media (max-width: 480px) {
+  .experience .summit-nav-brand { gap: 6px; font-size: 15px; }
+  .experience .summit-nav-brand small { font-size: 7px; letter-spacing: .13em; }
+}
