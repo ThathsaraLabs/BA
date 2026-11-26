@@ -1,5 +1,6 @@
 "use client";
 
+import { sitePath } from "./site-path";
 import { useEffect, useRef, useState } from "react";
 import asiaGlobe from "./asia-globe.json";
 import { aircraftFrame, flightArc, globePainter, initialView, projector, radians, routeFrame, surfacePoint, visible } from "./globe-renderer";
@@ -162,7 +163,7 @@ export default function InteractiveGlobe() {
       if (inView) {
         if (!started) {
           started = true;
-          image.src = "/images/blue-marble-world.webp";
+          image.src = sitePath("/images/blue-marble-world.webp");
         }
         queue();
       } else {
@@ -199,7 +200,7 @@ export default function InteractiveGlobe() {
       <div className="globe-view" data-ready={ready}>
         {!ready && (
           <div className="globe-static">
-            <img src="/images/asia-globe-blue-marble.webp" width={asiaGlobe.width} height={asiaGlobe.height} loading="lazy" alt="" />
+            <img src={sitePath("/images/asia-globe-blue-marble.webp")} width={asiaGlobe.width} height={asiaGlobe.height} loading="lazy" alt="" />
             <svg className="globe-route-motion" viewBox={`0 0 ${asiaGlobe.width} ${asiaGlobe.height}`} aria-hidden="true">
               <path className="globe-route-base" d={asiaGlobe.route} />
             </svg>

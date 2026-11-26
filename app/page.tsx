@@ -1,5 +1,6 @@
 "use client";
 
+import { sitePath } from "./site-path";
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
@@ -340,7 +341,7 @@ export default function Home() {
           <button onClick={() => scrollTo("programme")}>Programme</button>
           <button onClick={() => scrollTo("speakers")}>Speakers</button>
           <button onClick={() => scrollTo("partners")}>Partners</button>
-          <a className="nav-travel" href="/travel">Travel</a>
+          <a className="nav-travel" href={sitePath("/travel/")}>Travel</a>
           <a className="nav-cta" href={BOOKING_URL}>
             Tickets <ArrowRight size={16} />
           </a>
@@ -427,7 +428,7 @@ export default function Home() {
           {programmeData.map((prog, idx) => (
             <div className="programme-card-shell" data-reveal key={prog.day}>
               <div className="programme-photo-card" onMouseMove={handleCardMouseMove} onMouseLeave={handleCardMouseLeave}>
-                <img src={idx === 0 ? "/images/networking-premium-v1.webp" : "/images/workshop-premium-v1.webp"} alt={idx === 0 ? "Illustration of professionals sharing ideas at a business networking session" : "Illustration of an interactive business workshop"} width={1536} height={1024} loading="lazy" />
+                <img src={sitePath(idx === 0 ? "/images/networking-premium-v1.webp" : "/images/workshop-premium-v1.webp")} alt={idx === 0 ? "Illustration of professionals sharing ideas at a business networking session" : "Illustration of an interactive business workshop"} width={1536} height={1024} loading="lazy" />
                 <div className="programme-card-copy">
                   <span className="programme-date">{idx === 0 ? "12" : "13"} December <i /></span>
                   <h3>{idx === 0 ? <>Business Community<br />Networking</> : <>Korea<br />Business Day</>}</h3>
@@ -553,7 +554,7 @@ export default function Home() {
               onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); setSelectedSpeaker(speaker); } }}
             >
               <div className="speaker-mark">
-                <img className="speaker-avatar-img" src={speaker.image} alt={speaker.name} loading="lazy" />
+                <img className="speaker-avatar-img" src={sitePath(speaker.image)} alt={speaker.name} loading="lazy" />
               </div>
               <div className="speaker-info">
                 <p>{speaker.role}</p>
@@ -593,7 +594,7 @@ export default function Home() {
         </div>
         <figure className="partnership-frame" data-reveal>
           <div className="partnership-photo">
-            <img src="/images/booking-partnership-v1.webp" alt="AI illustration of the Booking Ministry representative and Business Advisor speakers in a friendly business conversation" width={1600} height={900} loading="lazy" />
+            <img src={sitePath("/images/booking-partnership-v1.webp")} alt="AI illustration of the Booking Ministry representative and Business Advisor speakers in a friendly business conversation" width={1600} height={900} loading="lazy" />
           </div>
         </figure>
       </section>
@@ -631,7 +632,7 @@ export default function Home() {
           <div className="section-label">Travel & Venue Guide</div>
           <h2>Planning your trip to <em>Daegu?</em></h2>
           <p>See routes to Yeungjin University from nine cities across Korea by train, bus, or private vehicle.</p>
-          <a className="text-btn" href="/travel">Open the travel guide <ArrowRight size={17} /></a>
+          <a className="text-btn" href={sitePath("/travel/")}>Open the travel guide <ArrowRight size={17} /></a>
         </div>
       </section>
 
@@ -799,7 +800,7 @@ export default function Home() {
         <button className="floating-pill-btn quick-programme" onClick={() => scrollTo("programme")}>
           Programme
         </button>
-        <a className="floating-pill-btn quick-travel" href="/travel">
+        <a className="floating-pill-btn quick-travel" href={sitePath("/travel/")}>
           Travel
         </a>
         <a
@@ -847,7 +848,7 @@ export default function Home() {
               <div className="speaker-mark !w-20 !h-24 !text-3xl shrink-0">
                 <img
                   className="speaker-avatar-img"
-                  src={selectedSpeaker.image}
+                  src={sitePath(selectedSpeaker.image)}
                   alt={selectedSpeaker.name}
                 />
               </div>

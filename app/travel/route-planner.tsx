@@ -1,5 +1,6 @@
 "use client";
 
+import { sitePath } from "../site-path";
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowLeft, ArrowRight, ArrowUpRight, Bus, CarFront, Check, Copy,
@@ -164,7 +165,7 @@ export default function RoutePlanner() {
     <main className="journey-page" style={{ "--journey-accent": color } as React.CSSProperties}>
       <header className="journey-header">
         <div className="journey-wrap">
-          <a className="journey-back" href="/"><ArrowLeft size={17} /> Event home</a>
+          <a className="journey-back" href={sitePath("/")}><ArrowLeft size={17} /> Event home</a>
           <span>Business Advisor Korea 2026</span>
         </div>
       </header>
