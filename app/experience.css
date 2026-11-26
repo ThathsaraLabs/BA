@@ -468,3 +468,28 @@ html[data-theme="light"] .summit-footer-organizer small { color: #724c23; }
 }
 @keyframes enterprise-card-in { from { opacity: .55; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes enterprise-photo-in { from { transform: scale(1.14); } to { transform: scale(1); } }
+.enterprise-title-line { display: block; }
+.enterprise-intro h2 em { position: relative; width: fit-content; }
+.enterprise-intro h2 em::after { content: ""; position: absolute; left: 0; right: 0; bottom: -8px; height: 2px; background: linear-gradient(90deg, #bf1534, #bd904e, transparent); transform-origin: left; }
+.enterprise-caption { position: relative; z-index: 1; }
+@media (prefers-reduced-motion: no-preference) {
+ .enterprise-started .enterprise-title-line { animation: enterprise-title-reveal .85s cubic-bezier(.2,.7,.2,1) both; }
+ .enterprise-started em.enterprise-title-line { animation-delay: .16s; }
+ .enterprise-started .enterprise-intro h2 em::after { animation: enterprise-underline 1.2s ease-out .4s both; }
+ .enterprise-in-view li { animation-duration: .9s; }
+ .enterprise-in-view .enterprise-photo { animation: enterprise-photo-in 5s ease-out both; }
+ .enterprise-in-view li:nth-child(2) .enterprise-photo { animation-delay: .2s; }
+ .enterprise-in-view li:nth-child(3) .enterprise-photo { animation-delay: .4s; }
+ .enterprise-in-view .enterprise-caption { animation: enterprise-caption-in .9s ease-out .25s both; }
+ .enterprise-in-view li:nth-child(2) .enterprise-caption { animation-delay: .45s; }
+ .enterprise-in-view li:nth-child(3) .enterprise-caption { animation-delay: .65s; }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+ .enterprise-journey li { transition: box-shadow .35s ease; }
+ .enterprise-journey li:hover { box-shadow: 0 15px 40px #17202d40; }
+ .enterprise-caption { transition: translate .35s ease; }
+ .enterprise-journey li:hover .enterprise-caption { translate: 0 -6px; }
+}
+@keyframes enterprise-title-reveal { from { opacity: .25; transform: translateY(10px); filter: blur(3px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
+@keyframes enterprise-underline { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes enterprise-caption-in { from { opacity: .2; transform: translateY(13px); } to { opacity: 1; transform: translateY(0); } }

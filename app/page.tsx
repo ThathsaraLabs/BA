@@ -46,10 +46,11 @@ function EnterpriseJourney() {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         panel.classList.add("enterprise-in-view");
-        observer.disconnect();
+        panel.closest(".enterprise-outcomes")?.classList.add("enterprise-started");
+
       }
     }, { threshold: 0.3 });
-    observer.observe(panel);
+    panel.querySelectorAll("li").forEach((card) => observer.observe(card));
     return () => observer.disconnect();
   }, []);
 
@@ -688,7 +689,7 @@ export default function Home() {
         <div className="outcomes-copy enterprise-intro">
           <div className="section-label">What You Take Home</div>
           <h2>
-            From earning in Korea to <em>building a business in Sri Lanka.</em>
+            <span className="enterprise-title-line">From earning in Korea to</span>{" "}<em className="enterprise-title-line">building a business in Sri Lanka.</em>
           </h2>
           <p>At the summit, learn how to set a savings target, evaluate a business idea, and plan your first steps before you return.</p>
         </div>
