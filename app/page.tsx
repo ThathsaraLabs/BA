@@ -25,6 +25,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import InteractiveGlobe from "./interactive-globe";
 
+const BUSINESS_ADVISOR_FACEBOOK = "https://www.facebook.com/BusinessadvisorLK";
 const BOOKING_URL = "https://www.bookingministry.com/";
 const BOOKING_SUPPORT_URL = `${BOOKING_URL}contact`;
 const EVENT_VENUE = "Yeungjin University, Daegu";
@@ -293,6 +294,13 @@ export default function Home() {
     };
   }, []);
 
+  function toggleTheme() {
+    const root = document.documentElement;
+    const theme = root.dataset.theme === "light" ? "dark" : "light";
+    root.dataset.theme = theme;
+    try { localStorage.setItem("ba-theme", theme); } catch { /* Keep the theme for this visit. */ }
+  }
+
   const scrollTo = (id: string) => {
     setMenuOpen(false);
     const element = document.getElementById(id);
@@ -349,6 +357,8 @@ export default function Home() {
           </a>
         </div>
 
+        <div className="nav-utilities">
+        <button type="button" className="theme-toggle" onClick={toggleTheme}><span className="theme-to-light">☀ Light</span><span className="theme-to-dark">☾ Dark</span></button>
         <button
           className="menu-toggle"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -357,6 +367,7 @@ export default function Home() {
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
+        </div>
       </nav>
 
       {/* Hero Section */}
@@ -365,14 +376,16 @@ export default function Home() {
         <div className="hero-shade" />
 
         <div className="hero-copy">
-          <p className="hero-kicker">
-            Business Advisor Business Summit · Daegu, South Korea
-          </p>
-          <h1 className="hero-title">
-            <span>Business</span>
-            <span>beyond</span>
-            <span className="accent">borders.</span>
+          <p className="hero-kicker">Daegu, South Korea</p>
+          <h1 className="summit-wordmark">
+            <span className="sr-only">Business Advisor Business Summit</span>
+            <img src={sitePath("/images/business-summit-logo.png")} alt="" width={880} height={328} fetchPriority="high" />
           </h1>
+          <a className="hero-organizer" href="#partners">
+            <img src={sitePath("/images/booking-ministry-logo.webp")} alt="" width={700} height={340} />
+            <span><small>Organized by</small><strong>Booking Ministry</strong></span>
+            <ArrowRight size={18} aria-hidden="true" />
+          </a>
 
           <div className="hero-meta">
             <p>
@@ -383,12 +396,11 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="summit-branding"><img src={sitePath("/images/business-summit-logo.png")} alt="Business Summit" width={880} height={328} /><a href="#partners">Organized by <strong>Booking Ministry</strong></a></div>
           <div className="hero-actions">
             <button className="primary-btn" onClick={() => scrollTo("programme")}>
               Explore the programme <ArrowRight size={18} />
             </button>
-            <a className="text-btn" href={BOOKING_URL}>Check Tickets <ArrowRight size={17} /></a>
+            <a className="text-btn hero-facebook" href={BUSINESS_ADVISOR_FACEBOOK} target="_blank" rel="noreferrer">Business Advisor on Facebook <ArrowRight size={17} /></a>
           </div>
         </div>
 
@@ -593,7 +605,7 @@ export default function Home() {
           <div className="partnership-actions">
             <a className="primary-btn" href={BOOKING_URL}>Check Tickets <ArrowRight size={17} /></a>
             <a className="text-btn" href={BOOKING_SUPPORT_URL}>Booking Support</a>
-            <a className="text-btn" href="https://www.facebook.com/BusinessadvisorLK" target="_blank" rel="noreferrer">Business Advisor on Facebook <ArrowRight size={16} /></a>
+            <a className="text-btn" href={BUSINESS_ADVISOR_FACEBOOK} target="_blank" rel="noreferrer">Business Advisor on Facebook <ArrowRight size={16} /></a>
           </div>
         </div>
         <figure className="partnership-frame" data-reveal>

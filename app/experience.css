@@ -318,3 +318,49 @@
 .experience .organizer-logo { background: #000; display: grid; place-items: center; }
 .experience .organizer-logo img { width: min(88%, 560px); height: auto; object-fit: contain; }
 .experience .partnership-actions { flex-wrap: wrap; }
+.experience .nav-utilities { display: flex; align-items: center; gap: 8px; }
+.experience .theme-toggle { min-height: 42px; padding: 0 12px; border: 1px solid #d2b69265; border-radius: 8px; font-size: 13px; white-space: nowrap; cursor: pointer; }
+.theme-to-dark, html[data-theme="light"] .theme-to-light { display: none; }
+html[data-theme="light"] .theme-to-dark { display: inline; }
+
+.experience .summit-wordmark { width: min(100%, 475px); margin: 18px 0 16px; }
+.experience .summit-wordmark img { width: 100%; height: auto; border-radius: 10px; box-shadow: 0 16px 45px #0005; }
+.experience .hero-organizer { display: inline-flex; gap: 12px; align-items: center; background: #0c111cec; border: 1px solid #d2b69260; border-radius: 9px; padding: 7px 12px 7px 7px; color: #fff; }
+.experience .hero-organizer img { width: 80px; height: auto; border-radius: 5px; }
+.experience .hero-organizer span { display: grid; gap: 2px; }
+.experience .hero-organizer small { color: #dac4a5; font-size: 11px; }
+.experience .hero-organizer strong { font-size: 15px; }
+.experience .hero-organizer > svg { margin-left: 3px; color: #dac4a5; }
+.experience .hero-actions .hero-facebook { display: inline-flex; }
+.experience .hero-actions { flex-wrap: wrap; }
+
+html[data-theme="light"] { color-scheme: light; background: #f8f6f1; }
+html[data-theme="light"] .experience { background: #f8f6f1; color: #182436; }
+html[data-theme="light"] .experience :is(.nav-shell, .nav-links.open, .floating-bar, footer) { background: #fffcf6f5; color: #182436; border-color: #c5c9d2; }
+html[data-theme="light"] .experience .nav-links :is(button, .nav-travel) { color: #182436; }
+html[data-theme="light"] .experience .nav-cta { color: white; }
+html[data-theme="light"] .experience :is(.connection, .programme, .speakers, .partnership, .why, .proof, .faq, .closing) {
+  --paper: #182436;
+  --gold: #79552b;
+  background: #f8f6f1;
+  color: #182436;
+}
+html[data-theme="light"] .experience :is(.programme, .partnership, .proof, .closing) { background: #eee9e0; }
+html[data-theme="light"] .experience :is(.hero, .programme-card, .globe-hint-pill) { --paper: #fffaf0; color: #fffaf0; }
+html[data-theme="light"] .experience .closing-bg { opacity: .12; }
+html[data-theme="light"] .experience :is(.section-label, .connection-head > p, .why-copy > p, .programme-header-left p, .speaker-info p, .programme-meta-badges span, .programme-tab-btn) { color: #503e35; }
+html[data-theme="light"] .experience :is(.speaker-card, .faq-item, .programme-tab-content, .programme-tab-content.dark-card) { background: #fffdfa; border-color: #cbc3b7; color: #182436; box-shadow: 0 8px 24px #28211813; }
+html[data-theme="light"] .experience :is(.primary-btn, .floating-pill-cta) { color: #fff; }
+html[data-theme="light"] .experience .journey-page { --journey-bg: #f8f6f1; --journey-panel: #fffdfa; --journey-line: #c8cbd0; --journey-text: #182436; --journey-muted: #4d5c70; background: #f8f6f1; }
+html[data-theme="light"] .experience .journey-page { --journey-readable-accent: #9b1937; }
+html[data-theme="light"] .journey-page :is(.journey-distance-number, .journey-intro em, .journey-itinerary-title p) { color: var(--journey-readable-accent); }
+html[data-theme="light"] .journey-page :is(.journey-cities, .journey-modes) button { background: #f2f4f7; border-color: #a6b2c0; }
+html[data-theme="light"] .journey-page .journey-cities small { color: #4d5c70; }
+html[data-theme="light"] .journey-page :is(.journey-cities, .journey-modes) button[aria-pressed="true"] { background: #ffe4e8; border-color: #b63a55; color: #881c34; }
+html[data-theme="light"] .journey-page .journey-map { --journey-line: #39495e; --journey-muted: #c2ccdc; color: #f9f5ee; }
+
+@media (max-width: 900px) {
+  .experience .summit-wordmark { width: min(100%, 355px); }
+  .experience .hero-actions .hero-facebook { font-size: 13px; }
+  .experience .theme-toggle { min-height: 40px; padding-inline: 9px; }
+}

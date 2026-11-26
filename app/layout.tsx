@@ -18,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head><link rel="preload" as="image" href={sitePath("/images/daegu-portal-v1.webp")} /></head>
+    <html lang="en" suppressHydrationWarning>
+      <head><script dangerouslySetInnerHTML={{ __html: 'try { if (localStorage.getItem("ba-theme") === "light") document.documentElement.dataset.theme = "light"; } catch {}' }} /><link rel="preload" as="image" href={sitePath("/images/daegu-portal-v1.webp")} /></head>
       <body className="antialiased">{children}</body>
     </html>
   );
