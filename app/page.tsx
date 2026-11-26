@@ -96,7 +96,7 @@ const programmeData = [
   {
     day: "Day 01",
     date: "Saturday, 12 December 2026",
-    title: "Business Community Networking",
+    title: "Business Networking Meeting",
     badge: "Community & Strategic Connections",
     time: "15:00 – 19:30 KST",
     venue: EVENT_VENUE,
@@ -113,7 +113,7 @@ const programmeData = [
   {
     day: "Day 02",
     date: "Sunday, 13 December 2026",
-    title: "Business Advisor Korea Business Day",
+    title: "Business Advisor Business Summit",
     badge: "Intensive Practical Workshop",
     time: "09:30 – 15:30 KST",
     venue: EVENT_VENUE,
@@ -340,7 +340,7 @@ export default function Home() {
           <button onClick={() => scrollTo("story")}>The Event</button>
           <button onClick={() => scrollTo("programme")}>Programme</button>
           <button onClick={() => scrollTo("speakers")}>Speakers</button>
-          <button onClick={() => scrollTo("partners")}>Partners</button>
+          <button onClick={() => scrollTo("partners")}>Organizer</button>
           <a className="nav-travel" href={sitePath("/travel/")}>Travel</a>
           <a className="nav-cta" href={BOOKING_URL}>
             Tickets <ArrowRight size={16} />
@@ -364,7 +364,7 @@ export default function Home() {
 
         <div className="hero-copy">
           <p className="hero-kicker">
-            Business Advisor Korea 2026
+            Business Advisor Business Summit · Daegu, South Korea
           </p>
           <h1 className="hero-title">
             <span>Business</span>
@@ -381,6 +381,7 @@ export default function Home() {
             </p>
           </div>
 
+          <div className="summit-branding"><img src={sitePath("/images/business-summit-logo.png")} alt="Business Summit" width={880} height={328} /><a href="#partners">Organized by <strong>Booking Ministry</strong></a></div>
           <div className="hero-actions">
             <button className="primary-btn" onClick={() => scrollTo("programme")}>
               Explore the programme <ArrowRight size={18} />
@@ -431,7 +432,7 @@ export default function Home() {
                 <img src={sitePath(idx === 0 ? "/images/networking-premium-v1.webp" : "/images/workshop-premium-v1.webp")} alt={idx === 0 ? "Illustration of professionals sharing ideas at a business networking session" : "Illustration of an interactive business workshop"} width={1536} height={1024} loading="lazy" />
                 <div className="programme-card-copy">
                   <span className="programme-date">{idx === 0 ? "12" : "13"} December <i /></span>
-                  <h3>{idx === 0 ? <>Business Community<br />Networking</> : <>Korea<br />Business Day</>}</h3>
+                  <h3>{idx === 0 ? <>Business Networking<br />Meeting</> : <>Business Advisor<br />Business Summit</>}</h3>
                   <p>{idx === 0 ? "Connect. Share. Collaborate." : "Learn. Plan. Build."}</p>
                   <button className="programme-card-link" aria-label={`Explore ${prog.day}`} onClick={() => {
                     setActiveDay(idx);
@@ -584,17 +585,18 @@ export default function Home() {
       {/* Outcomes Section */}
       <section className="partnership section" id="partners">
         <div className="partnership-copy" data-reveal>
-          <div className="section-label">Event Partnership</div>
-          <h2><span>Booking<br />Ministry</span><span className="partner-cross">×</span><span>Business<br />Advisor</span></h2>
-          <p>Connecting people. <br />Bringing the event together.</p>
+          <div className="section-label">Summit Organizer</div>
+          <h2>Booking Ministry</h2>
+          <p>Booking Ministry organizes the Business Advisor Business Summit in Daegu, featuring the Business Advisor team from Sri Lanka.</p>
           <div className="partnership-actions">
             <a className="primary-btn" href={BOOKING_URL}>Check Tickets <ArrowRight size={17} /></a>
             <a className="text-btn" href={BOOKING_SUPPORT_URL}>Booking Support</a>
+            <a className="text-btn" href="https://www.facebook.com/BusinessadvisorLK" target="_blank" rel="noreferrer">Business Advisor on Facebook <ArrowRight size={16} /></a>
           </div>
         </div>
         <figure className="partnership-frame" data-reveal>
-          <div className="partnership-photo">
-            <img src={sitePath("/images/booking-partnership-v1.webp")} alt="AI illustration of the Booking Ministry representative and Business Advisor speakers in a friendly business conversation" width={1600} height={900} loading="lazy" />
+          <div className="partnership-photo organizer-logo">
+            <img src={sitePath("/images/booking-ministry-logo.webp")} alt="Booking Ministry logo" width={700} height={340} loading="lazy" />
           </div>
         </figure>
       </section>
@@ -631,7 +633,7 @@ export default function Home() {
         <div className="travel-intro" data-reveal>
           <div className="section-label">Travel & Venue Guide</div>
           <h2>Planning your trip to <em>Daegu?</em></h2>
-          <p>See routes to Yeungjin University from nine cities across Korea by train, bus, or private vehicle.</p>
+          <p>See routes to Yeungjin University from 17 cities across Korea by train, bus, or private vehicle.</p>
           <a className="text-btn" href={sitePath("/travel/")}>Open the travel guide <ArrowRight size={17} /></a>
         </div>
       </section>

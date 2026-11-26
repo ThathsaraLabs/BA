@@ -4,8 +4,8 @@ import "./globals.css";
 import "./experience.css";
 
 export const metadata: Metadata = {
-  title: "Business Advisor Korea 2026 · Daegu",
-  description: "Join Business Advisor Korea on 12–13 December 2026 at Yeungjin University in Daegu, South Korea.",
+  title: "Business Advisor Business Summit · Daegu, South Korea",
+  description: "Booking Ministry presents the Business Networking Meeting on 12 December and the Business Advisor Business Summit on 13 December 2026 at Yeungjin University in Daegu, South Korea.",
   icons: {
     icon: sitePath("/favicon.svg"),
     shortcut: sitePath("/favicon.svg"),

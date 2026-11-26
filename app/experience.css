@@ -312,3 +312,9 @@
   .experience .hero-image, .experience .hero-copy, .experience [data-reveal], .experience .speaker-card { transform: none !important; opacity: 1 !important; clip-path: none !important; }
   .experience .programme-card-shell { rotate: 0deg; }
 }
+.experience .summit-branding { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 16px; }
+.experience .summit-branding img { width: clamp(132px, 16vw, 210px); height: auto; border-radius: 4px; }
+.experience .summit-branding a { font-size: 13px; text-decoration: underline; text-underline-offset: 4px; }
+.experience .organizer-logo { background: #000; display: grid; place-items: center; }
+.experience .organizer-logo img { width: min(88%, 560px); height: auto; object-fit: contain; }
+.experience .partnership-actions { flex-wrap: wrap; }
