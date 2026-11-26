@@ -1,9 +1,8 @@
 "use client";
 
-import { sitePath } from "../site-path";
 import { useEffect, useRef, useState } from "react";
 import {
-  ArrowLeft, ArrowRight, ArrowUpRight, Bus, CarFront, Check, Copy,
+  ArrowRight, ArrowUpRight, Bus, CarFront, Check, Copy,
   MapPin, RotateCcw, TrainFront,
 } from "lucide-react";
 import boundary from "./korea-boundary.json";
@@ -162,18 +161,12 @@ export default function RoutePlanner() {
   }
 
   return (
-    <main className="journey-page" style={{ "--journey-accent": color } as React.CSSProperties}>
-      <header className="journey-header">
-        <div className="journey-wrap">
-          <a className="journey-back" href={sitePath("/")}><ArrowLeft size={17} /> Event home</a>
-          <span>Business Advisor Korea 2026</span>
-        </div>
-      </header>
+    <section id="travel" className="journey-page journey-embedded" aria-labelledby="travel-heading" style={{ "--journey-accent": color } as React.CSSProperties}>
 
       <div className="journey-wrap">
         <section className="journey-intro">
           <div>
-            <h1>Your next connection<br className="journey-heading-break" /> is in <em>Daegu.</em></h1>
+            <h2 id="travel-heading">Plan your trip<br className="journey-heading-break" /> to <em>Daegu.</em></h2>
             <p>Choose your departure city and how you’re travelling to Yeungjin University.</p>
           </div>
           <div className="journey-event"><MapPin size={19} /><span>Bokhyeon Campus, Daegu<small>12–13 December 2026</small></span></div>
@@ -259,6 +252,6 @@ export default function RoutePlanner() {
           </div>
         </section>
       </div>
-    </main>
+    </section>
   );
 }

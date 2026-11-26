@@ -1,6 +1,8 @@
 "use client";
 
 import { sitePath } from "./site-path";
+import RoutePlanner from "./travel/route-planner";
+import "./travel/travel.css";
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
@@ -341,7 +343,7 @@ export default function Home() {
           <button onClick={() => scrollTo("programme")}>Programme</button>
           <button onClick={() => scrollTo("speakers")}>Speakers</button>
           <button onClick={() => scrollTo("partners")}>Organizer</button>
-          <a className="nav-travel" href={sitePath("/travel/")}>Travel</a>
+          <a className="nav-travel" href="#travel" onClick={() => setMenuOpen(false)}>Travel</a>
           <a className="nav-cta" href={BOOKING_URL}>
             Tickets <ArrowRight size={16} />
           </a>
@@ -629,14 +631,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="travel-sec section" id="travel">
-        <div className="travel-intro" data-reveal>
-          <div className="section-label">Travel & Venue Guide</div>
-          <h2>Planning your trip to <em>Daegu?</em></h2>
-          <p>See routes to Yeungjin University from 17 cities across Korea by train, bus, or private vehicle.</p>
-          <a className="text-btn" href={sitePath("/travel/")}>Open the travel guide <ArrowRight size={17} /></a>
-        </div>
-      </section>
 
       <section className="outcomes section">
         <div className="outcomes-visual" data-reveal>
@@ -781,6 +775,8 @@ export default function Home() {
         </div>
       </section>
 
+      <RoutePlanner />
+
       {/* Footer */}
       <footer>
         <div className="brand">
@@ -802,7 +798,7 @@ export default function Home() {
         <button className="floating-pill-btn quick-programme" onClick={() => scrollTo("programme")}>
           Programme
         </button>
-        <a className="floating-pill-btn quick-travel" href={sitePath("/travel/")}>
+        <a className="floating-pill-btn quick-travel" href="#travel" onClick={() => setMenuOpen(false)}>
           Travel
         </a>
         <a
