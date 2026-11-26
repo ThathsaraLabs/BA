@@ -426,7 +426,7 @@ html[data-theme="light"] .summit-footer-organizer small { color: #724c23; }
 .experience .header-branding .summit-nav-brand { font-size: clamp(14px, 1.5vw, 21px); min-width: 0; }
 .header-branding .summit-nav-brand img { width: 48px; height: 49px; object-fit: contain; }
 .header-presenter { display: flex; gap: 6px; align-items: center; font-size: 12px; flex: none; }
-.header-presenter img { width: 72px; height: auto; border-radius: 4px; }
+.header-presenter img { width: 96px; height: auto; border-radius: 4px; }
 @media (max-width: 1150px) {
  .experience .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; background: #0b101bf5; padding: 22px; }
  .experience .nav-links.open { display: flex; }
@@ -437,6 +437,6 @@ html[data-theme="light"] .summit-footer-organizer small { color: #724c23; }
  .header-branding .summit-nav-brand img { width: 34px; height: 35px; }
  .experience .header-branding .summit-nav-brand { font-size: 12px; gap: 6px; }
  .header-presenter { margin-left: 40px; font-size: 9px; }
- .header-presenter img { width: 48px; }
+ .header-presenter img { width: 64px; }
  .experience .nav-shell { padding-inline: 12px; min-height: 80px; }
 }
