@@ -493,3 +493,5 @@ html[data-theme="light"] .summit-footer-organizer small { color: #724c23; }
 @keyframes enterprise-title-reveal { from { opacity: .25; transform: translateY(10px); filter: blur(3px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
 @keyframes enterprise-underline { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 @keyframes enterprise-caption-in { from { opacity: .2; transform: translateY(13px); } to { opacity: 1; transform: translateY(0); } }
+.header-event-name .header-country { display: block; margin-top: 4px; font-size: .72em; letter-spacing: .09em; font-weight: 500; }
+.header-title-divider { display: inline; margin-inline: .08em; }
