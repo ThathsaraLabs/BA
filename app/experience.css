@@ -413,3 +413,12 @@ html[data-theme="light"] .summit-footer-organizer small { color: #724c23; }
   .experience .summit-nav-brand { min-width: 0; }
   .experience .nav-utilities { flex-shrink: 0; }
 }
+@media (min-width: 901px) and (max-height: 850px) {
+  .experience .hero-manifesto { display: none; }
+}
+@media (max-width: 420px) and (max-height: 680px) {
+  .experience .hero-copy { padding-block: 80px 64px; }
+  .experience .summit-main-logo { width: min(100%, 170px); }
+  .experience .hero-meta { margin-block: 17px; }
+  .experience .hero-actions { margin-top: 16px; gap: 10px; }
+}

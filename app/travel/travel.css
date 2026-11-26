@@ -112,7 +112,7 @@
   .journey-event { flex: 0 0 180px; }
   .journey-map-svg { align-self: center; }
 }
-@media (max-width: 760px) {
+@media (max-width: 820px) {
   .journey-wrap { width: calc(100% - 32px); }
   .journey-header .journey-wrap { min-height: 54px; }
   .journey-intro { display: block; padding-block: 27px 21px; }
