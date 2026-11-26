@@ -383,7 +383,7 @@ export default function Home() {
           </h1>
           <a className="hero-organizer" href="#partners">
             <img src={sitePath("/images/booking-ministry-logo.webp")} alt="" width={700} height={340} />
-            <span><small>Organized by</small><strong>Booking Ministry</strong></span>
+            <span><small>Organised by</small><strong>Booking Ministry</strong></span>
             <ArrowRight size={18} aria-hidden="true" />
           </a>
 
@@ -805,8 +805,11 @@ export default function Home() {
             <a href="#travel">Travel Guide</a>
           </nav>
           <div className="summit-footer-group">
-            <h2>Organized by</h2>
-            <a className="summit-footer-organizer" href={BOOKING_URL}>Booking Ministry <ArrowRight size={15} aria-hidden="true" /></a>
+            <a className="summit-footer-organizer" href={BOOKING_URL}>
+              <img src={sitePath("/images/booking-ministry-logo.webp")} alt="" width={700} height={340} loading="lazy" />
+              <span><small>Organised by</small><strong>Booking Ministry</strong></span>
+              <ArrowRight size={16} aria-hidden="true" />
+            </a>
             <a href={BOOKING_SUPPORT_URL}>Booking support</a>
             <a href={BUSINESS_ADVISOR_FACEBOOK}>Business Advisor on Facebook</a>
           </div>

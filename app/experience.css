@@ -390,3 +390,12 @@ html[data-theme="light"] .summit-footer-logo { border: 1px solid var(--footer-li
   .summit-footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 18px; }
   .summit-footer-brand { grid-column: 1 / -1; }
 }
+.experience .summit-footer .summit-footer-organizer { display: flex; width: 100%; align-items: center; gap: 10px; padding: 12px; border: 1px solid #e8b970; border-radius: 10px; background: #192338; color: #fff; }
+.summit-footer-organizer img { width: 68px; height: auto; border-radius: 5px; }
+.summit-footer-organizer span { display: grid; gap: 2px; }
+.summit-footer-organizer small { color: #f3cc91; font-size: 11px; }
+.summit-footer-organizer strong { font-size: 17px; line-height: 1.15; }
+.summit-footer-organizer svg { margin-left: auto; flex: none; }
+html[data-theme="light"] .experience .summit-footer .summit-footer-organizer { background: #fff3dc; color: #2f2116; border-color: #a87535; }
+html[data-theme="light"] .summit-footer-organizer small { color: #724c23; }
+@media (max-width: 680px) { .summit-footer-grid > .summit-footer-group:last-child { grid-column: 1 / -1; } }
