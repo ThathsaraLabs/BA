@@ -19,6 +19,7 @@ import {
   Handshake,
   Building2,
   Sprout,
+  PiggyBank,
 } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -29,6 +30,40 @@ const BUSINESS_ADVISOR_FACEBOOK = "https://www.facebook.com/BusinessadvisorLK";
 const BOOKING_URL = "https://www.bookingministry.com/";
 const BOOKING_SUPPORT_URL = `${BOOKING_URL}contact`;
 const EVENT_VENUE = "Yeungjin University, Daegu";
+
+const enterpriseSteps = [
+  { title: "Earn in South Korea", detail: "Set a goal for what you earn abroad.", Icon: Building2 },
+  { title: "Build your savings", detail: "Set aside money and plan your startup costs.", Icon: PiggyBank },
+  { title: "Start and grow in Sri Lanka", detail: "Return with a plan to launch and build your business.", Icon: Sprout },
+];
+
+function EnterpriseJourney() {
+  const journey = useRef<HTMLOListElement>(null);
+
+  useEffect(() => {
+    const panel = journey.current;
+    if (!panel || !("IntersectionObserver" in window)) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        panel.classList.add("enterprise-in-view");
+        observer.disconnect();
+      }
+    }, { threshold: 0.3 });
+    observer.observe(panel);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <ol ref={journey} className="enterprise-journey" aria-label="From working in Korea to building a business in Sri Lanka">
+      {enterpriseSteps.map(({ title, detail, Icon }) => (
+        <li key={title}>
+          <span className="enterprise-icon"><Icon size={22} aria-hidden="true" /></span>
+          <span><strong>{title}</strong><small>{detail}</small></span>
+        </li>
+      ))}
+    </ol>
+  );
+}
 
 interface Speaker {
   name: string;
@@ -647,25 +682,14 @@ export default function Home() {
 
       <section className="outcomes section">
         <div className="outcomes-visual" data-reveal>
-          <div className="orbit">
-            <span>
-              FROM
-              <br />
-              INCOME
-            </span>
-            <i>→</i>
-            <span>
-              TO
-              <br />
-              ENTERPRISE
-            </span>
-          </div>
+          <EnterpriseJourney />
         </div>
         <div className="outcomes-copy" data-reveal>
           <div className="section-label">What You Take Home</div>
           <h2>
-            A clearer path from income to <em>enterprise.</em>
+            From earning in Korea to <em>building a business in Sri Lanka.</em>
           </h2>
+          <p>At the summit, learn how to set a savings target, evaluate a business idea, and plan your first steps before you return.</p>
           <ol>
             {outcomes.map((item, i) => (
               <li key={item}>
