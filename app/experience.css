@@ -1,0 +1,314 @@
+/* Approved Daegu architectural direction. Shared functional widgets keep their base styles. */
+.experience {
+  --ink: #090d15;
+  --ink-light: #131b28;
+  --ink-card: #111722;
+  --paper: #f6eddf;
+  --red: #e62842;
+  --gold: #d2b692;
+  background: var(--ink);
+}
+.experience section[id], .experience #programme-details { scroll-margin-top: 100px; }
+.experience a { text-decoration: none; }
+.experience button:focus-visible, .experience a:focus-visible, .experience [role="button"]:focus-visible, .experience summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 6px; }
+.experience .nav-shell { height: 88px; padding-inline: 4vw; background: linear-gradient(#080c17c7, #080c1740); backdrop-filter: blur(18px); border-bottom-color: #d2b69218; }
+.experience .brand { font-size: clamp(18px, 2vw, 28px); font-weight: 500; letter-spacing: -.04em; white-space: nowrap; }
+.experience .brand small { font-size: 8px; letter-spacing: .22em; margin-top: 5px; font-weight: 500; }
+.experience .brand-slash { width: 8px; height: 36px; margin-right: 3px; }
+.experience .nav-links { gap: clamp(20px, 2.7vw, 45px); }
+.experience .nav-links > :is(button, .nav-travel) { font-size: 13px; font-weight: 400; letter-spacing: .01em; }
+.experience .nav-cta, .experience .primary-btn { clip-path: none; border-radius: 4px; background: linear-gradient(145deg, #d40027, #b90020); border: 1px solid #ef405950; box-shadow: 0 6px 22px #af001b25, inset 0 1px #ff768330; text-transform: none; letter-spacing: .01em; font-weight: 500; }
+.experience .nav-cta { min-width: 110px; justify-content: center; padding: 13px 20px; }
+.experience .primary-btn { padding: 18px 25px; min-height: 56px; font-size: 14px; }
+.experience .primary-btn:hover { background: linear-gradient(145deg, #ed1335, #c70025); transform: translateY(-3px); box-shadow: 0 14px 35px #db002536; }
+.experience .text-btn { display: inline-flex; padding: 8px 0; border-radius: 0; border-bottom: 1px solid var(--gold); font-size: 14px; color: var(--paper); gap: 14px; }
+.experience .section { padding: 110px 5vw; }
+.experience .section-label { color: #e6d7c2; font-size: 11px; font-weight: 500; letter-spacing: .28em; gap: 18px; }
+.experience .section-label::before { width: 40px; height: 1px; background: linear-gradient(90deg, var(--gold), #d2b69250); }
+.experience h2 { font-weight: 400; }
+.experience .progress-rail { right: 14px; height: 140px; opacity: .65; }
+
+/* Scene 01 — the Daegu portal */
+.experience .hero { height: 100svh; min-height: 780px; max-height: 1200px; align-items: center; isolation: isolate; }
+.experience .hero-image { inset: -2% 0; background-image: url('/images/daegu-portal-v1.webp'); background-position: center; }
+.experience .hero-shade { background: linear-gradient(90deg, #080c1570, #080c1510 50%, transparent 70%), linear-gradient(0deg, #080c1580, transparent 23%); }
+.experience .hero-copy { width: 51%; margin-left: 4vw; padding: 110px 0 135px; }
+.experience .hero-kicker { font-size: clamp(10px, 1.15vw, 16px); font-weight: 500; letter-spacing: .2em; color: var(--paper); display: block; }
+.experience .hero-kicker::after { content: ''; display: block; width: 142px; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); margin-top: 17px; }
+.experience .hero-title { font-weight: 400; font-size: clamp(88px, 8.6vw, 152px); line-height: .88; text-transform: none; letter-spacing: -.065em; margin: 25px 0 26px; }
+.experience .hero-title .accent { color: #dc1231; }
+.experience .hero-meta { flex-direction: column-reverse; gap: 9px; margin: 28px 0; }
+.experience .hero-meta p { border: 0; background: none; padding: 0; border-radius: 0; backdrop-filter: none; font-size: clamp(11px, 1.1vw, 15px); letter-spacing: .2em; }
+.experience .hero-meta svg { display: none; }
+.experience .hero-actions { gap: 26px; margin-top: 30px; }
+.experience .hero-manifesto { position: absolute; z-index: 3; bottom: 45px; left: 9%; right: 9%; display: flex; align-items: center; justify-content: space-between; gap: 6vw; }
+.hero-manifesto span { font: 25px Georgia, serif; text-transform: uppercase; letter-spacing: .27em; }
+.hero-manifesto i { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, #d2b692c0, transparent); }
+
+/* Scene 02 — a real interactive Earth on an architectural plinth */
+.experience .connection { min-height: 800px; display: grid; grid-template-columns: .92fr 1.08fr; align-items: center; gap: 1.5vw; padding-block: 80px 100px; overflow: hidden; background: linear-gradient(90deg, #080b1140, #080b1120), url('/images/daegu-interior-v1.webp') center / cover; isolation: isolate; }
+.experience .connection::before { content: ''; position: absolute; inset: 0; z-index: -1; opacity: .24; background: repeating-linear-gradient(90deg, transparent 0 34px, #e1c09c20 35px, #0008 37px, transparent 42px); mask-image: linear-gradient(90deg, #000, transparent 12%, transparent 93%, #000); }
+.experience .connection::after { content: ''; position: absolute; z-index: -1; width: 120%; height: 65px; left: -10%; bottom: 12%; border-top: 2px solid #e6284260; transform: rotate(-5deg); box-shadow: 0 -8px 25px #e628421a; }
+.experience .connection-head { display: block; min-width: 0; position: relative; z-index: 2; }
+.experience .connection h2 { font-size: clamp(48px, 5.2vw, 86px); line-height: 1.02; letter-spacing: -.05em; margin: 28px 0; }
+.experience .connection h2 em { white-space: nowrap; }
+.experience .connection-head > p { font-size: 15px; max-width: 400px; line-height: 1.7; color: #b4b7bd; }
+.connection-values { list-style: none; padding: 0; margin: 30px 0 36px; display: grid; gap: 24px; }
+.connection-values li { display: flex; align-items: center; font-size: clamp(16px, 1.5vw, 22px); gap: 22px; }
+.connection-values svg { color: var(--gold); width: 38px; height: 38px; stroke-width: 1; }
+.connection-values span { border-left: 1px solid #d2b69260; padding-left: 22px; }
+.experience .globe-stage { border: 0; border-radius: 0; margin: 0; overflow: visible; box-shadow: none; background: none; isolation: isolate; padding-bottom: 10px; }
+.experience .globe-overlay-info { text-align: center; padding: 0 0 10px; order: 0; }
+.globe-route-caption { font-size: 11px; text-transform: uppercase; letter-spacing: .25em; color: #d9cbb9; }
+.globe-route-caption span { color: var(--red); padding: 0 12px; }
+.experience .globe-overlay-info p { font-size: 10px; letter-spacing: .06em; }
+.experience .globe-view { background: none; overflow: visible; z-index: 2; }
+.experience .globe-view::before { content: ''; position: absolute; top: 30%; left: -2%; width: 104%; height: 32%; border: 1px solid #d6b48b90; border-radius: 50%; transform: rotate(-22deg); box-shadow: 0 0 14px #d2b6920d; z-index: -1; pointer-events: none; }
+.experience .globe-sphere { width: min(calc(100% - 50px), 650px); margin-block: 25px 0; }
+.experience .globe-sphere::after { box-shadow: inset 0 0 22px #63aff665, inset 0 0 3px #9bd4ff, 0 0 40px #338ded40, 0 25px 40px #0007; }
+.globe-plinth { position: relative; width: 104%; height: 90px; border-radius: 50%; background: radial-gradient(ellipse at 50% 15%, #343039, #16151b 60%, #050609 65%); border: 1px solid #bc927260; margin-top: -22px; box-shadow: 0 15px 0 #08090c, 0 17px 0 #b88a5e70, 0 25px 0 #08090c, 0 28px 3px #f0243425, 0 35px 45px #0009; z-index: 1; }
+.experience .globe-hint-pill { position: relative; z-index: 4; align-self: center; justify-content: center; margin-top: -18px; padding: 12px 18px; gap: 10px 14px; max-width: 92%; border: 1px solid #e8d8c240; border-radius: 25px; background: linear-gradient(125deg, #7e7a773d, #141820d9); backdrop-filter: blur(18px); box-shadow: 0 5px 20px #0005; }
+.experience .globe-controls { font-size: 11px; }
+.experience .globe-reset-btn { border: 0; border-left: 1px solid #d2b69260; border-radius: 0; padding: 2px 0 2px 14px; background: none; min-height: 28px; color: var(--paper); }
+.experience .globe-credit { flex-basis: 100%; text-align: center; margin: 0; font-size: 9px; color: #a7a8af; }
+
+/* Scene 03 — dimensional programme cards */
+.experience .programme { color: var(--paper); padding-top: 80px; background: linear-gradient(110deg, #090c1480, #090c1430), url('/images/daegu-interior-v1.webp') center / cover; overflow: hidden; }
+.experience .programme::before { background: linear-gradient(90deg, transparent 64%, #d7c4a912 64.1%, transparent 64.3%), linear-gradient(90deg, transparent 87%, #d7c4a912 87.1%, transparent 87.3%); }
+.experience .programme .section-label { color: #e6d7c2; }
+.experience .programme h2 { font-size: clamp(48px, 5.7vw, 94px); line-height: .99; margin-block: 25px 30px; }
+.programme-showcase { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 42px; perspective: 1600px; padding: 20px 0 35px; }
+.programme-showcase::before { content: ''; position: absolute; left: -15%; right: -15%; height: 130px; bottom: 35px; border: 2px solid #fa3d51; border-left: 0; border-right: 0; border-radius: 50%; transform: rotate(-7deg); box-shadow: 0 0 9px #ff3d5288, inset 0 0 8px #ff3d5240; pointer-events: none; }
+.programme-card-shell { position: relative; min-width: 0; perspective: 1200px; }
+.programme-card-shell:first-child { rotate: 1.5deg; }
+.programme-card-shell:last-child { rotate: -1.5deg; }
+.programme-photo-card { position: relative; border: 1px solid #d9bb8e9c; border-radius: 14px; background: #181c24; box-shadow: 0 3px 0 #d8bca650, 0 12px 0 #080a0d, 0 30px 45px #0009, 0 14px 30px #db123929; overflow: hidden; transition: transform .3s ease, box-shadow .3s ease; will-change: auto; }
+.programme-photo-card > img { display: block; width: 100%; height: clamp(230px, 24vw, 390px); object-fit: cover; object-position: center 40%; }
+.programme-card-copy { position: relative; padding: 26px 30px 32px; background: linear-gradient(130deg, #88807830, #1b1d25ce 45%, #1c1016f5); border-top: 1px solid #f6e3c740; box-shadow: inset 0 -2px #eb384570; }
+.programme-date { display: flex; align-items: center; gap: 22px; font-size: 11px; text-transform: uppercase; letter-spacing: .26em; }
+.programme-date i { display: inline-block; width: 70px; height: 1px; background: linear-gradient(90deg, #e3ccb3a0, transparent); }
+.programme-card-copy h3 { font: 400 clamp(28px, 3vw, 48px)/1.02 Georgia, serif; letter-spacing: -.03em; margin: 18px 45px 12px 0; }
+.programme-card-copy p { color: #dfd9d3; font-size: clamp(13px, 1.35vw, 20px); margin: 0; }
+.programme-card-link { position: absolute; right: 25px; top: 50%; width: 46px; height: 46px; display: grid; place-items: center; border: 1px solid #f6eddfc0; border-radius: 50%; background: #ffffff05; cursor: pointer; transition: background .2s, transform .2s; }
+.programme-card-link:hover { background: #bd0a29; transform: translateX(3px); }
+.programme-bottom { display: flex; gap: 28px; align-items: center; margin: 26px 0 55px; }
+.programme-bottom > span { font-size: 15px; color: #d3c9c0; }
+.programme-bottom > i { height: 1px; background: #d2b69260; flex: 1; }
+.experience .programme-tabs-nav { margin-top: 30px; padding-top: 30px; border-top: 1px solid #d2b69225; }
+.programme-details { border-top: 1px solid #d2b69240; }
+.programme-details summary { display: flex; align-items: center; justify-content: space-between; padding: 24px 0; cursor: pointer; color: #d5c7b6; font-size: 13px; list-style: none; }
+.programme-details summary::-webkit-details-marker { display: none; }
+.programme-details[open] summary svg { transform: rotate(180deg); }
+.experience .programme-details .programme-tabs-nav { padding-top: 0; margin-top: 0; border-top: 0; }
+.experience .programme-tab-btn { background: #ffffff04; color: #c1bcc1; border: 1px solid #d2b69230; font-weight: 400; flex: 1; }
+.experience .programme-tab-btn.active { color: var(--paper); border-color: #d2b69290; background: linear-gradient(120deg, #d2b69216, #e6284210); }
+.experience .tab-day-badge { color: var(--paper); background: #ffffff0b; white-space: nowrap; }
+.experience .programme-tab-content, .experience .programme-tab-content.dark-card { color: var(--paper); background: #ffffff03; border: 1px solid #d2b69230; padding: 32px; margin-top: 18px; box-shadow: 0 16px 45px #0002; }
+.experience .programme-header-left h3 { font-size: 34px; font-style: normal; }
+.experience .programme-header-left p { color: #b8b9c2; max-width: 760px; line-height: 1.7; font-size: 14px; }
+.experience .schedule-row, .experience .programme-tab-content.dark-card .schedule-row { background: #ffffff03; border-color: #ffffff08; font-weight: 400; }
+.experience .schedule-title { font-weight: 400; font-size: 14px; }
+.experience .programme-schedule-list { gap: 8px; }
+.experience .programme-meta-badges span { color: #dcc1a4; font-size: 12px; background: #d2b6920a; }
+
+/* Expert portraits in a matching gallery */
+.experience .speakers { background: radial-gradient(ellipse at 50% 80%, #43303a40, transparent 65%), #0b101a; }
+.experience .speakers h2 { font-size: clamp(48px, 5.4vw, 86px); }
+.experience .speakers-head > p { font-size: 15px; max-width: 340px; }
+.experience .speakers-grid { gap: 22px; margin-top: 55px; }
+.experience .speaker-card { padding: 10px 10px 24px; border-radius: 10px; border-color: #d2b69240; background: linear-gradient(150deg, #34344050, #0c111a); min-height: 490px; box-shadow: 0 20px 35px #0005; }
+.speaker-rail-controls { display: none; }
+.experience .speakers .speaker-mark { width: 100%; height: 270px; border-radius: 5px; border: 0; }
+.experience .speakers .speaker-card:hover .speaker-mark { transform: none; }
+.experience .speaker-avatar-img { filter: saturate(.75); }
+.experience .speaker-info { padding: 20px 12px 0; }
+.experience .speaker-info h3 { font-size: clamp(25px, 2.3vw, 36px); font-style: normal; }
+.experience .speaker-info p { color: #d3b796; font-size: 9px; line-height: 1.6; min-height: 28px; }
+.experience .speaker-info > span { font-size: 12px; line-height: 1.6; display: block; }
+.experience .speaker-explore-btn { margin-top: 20px; }
+
+/* Scene 04 — Booking Ministry, presented as a partnership */
+.experience .partnership { display: grid; grid-template-columns: .8fr 1.55fr; align-items: center; gap: 4vw; padding-top: 110px; padding-bottom: 110px; overflow: hidden; isolation: isolate; background: linear-gradient(115deg, #0e131eb0, #141d2e70), url('/images/daegu-interior-v1.webp') center / cover; }
+.partnership::before { content: ''; position: absolute; inset: 0; z-index: -1; background: repeating-linear-gradient(90deg, transparent 0 25px, #dfcab017 26px, #070a111a 28px, transparent 33px); mask-image: linear-gradient(90deg, transparent 70%, #000); }
+.partnership::after { content: ''; position: absolute; left: 33%; right: 0; height: 160px; bottom: -80px; border-top: 1px solid #d2b69270; transform: skewY(-6deg); background: linear-gradient(#d2b6920f, transparent); z-index: -1; }
+.partnership-copy { position: relative; z-index: 2; }
+.partnership h2 { font: 400 clamp(48px, 4.9vw, 82px)/.96 Georgia, serif; letter-spacing: -.05em; margin: 30px 0 22px; }
+.partner-cross { display: block; font-family: Arial, sans-serif; font-weight: 200; font-size: .82em; color: #df1937; margin: 10px 0; }
+.partnership-copy > p { font-size: 16px; line-height: 1.7; color: #dbd6cf; }
+.partnership-actions { display: flex; flex-wrap: wrap; gap: 16px 22px; align-items: center; padding: 20px; margin-top: 30px; border: 1px solid #dcc5a96b; border-radius: 12px; background: linear-gradient(130deg, #ddd3c52a, #ffffff06); box-shadow: inset 0 1px #f7eee728, 0 10px 20px #0003; backdrop-filter: blur(18px); }
+.partnership-actions .primary-btn { padding: 15px 19px; min-height: 48px; }
+.partnership-actions .text-btn { font-size: 12px; }
+.partnership-frame { position: relative; margin: 30px 0; perspective: 1400px; }
+.partnership-frame::before { content: ''; position: absolute; inset: -35px -12px 35px -20px; border: 1px solid #fff6; border-radius: 10px; background: linear-gradient(120deg, #fff1, #ffffff03); transform: rotate(-3deg); box-shadow: inset 0 1px 1px #fff2; }
+.partnership-frame::after { content: ''; position: absolute; left: 10%; right: 10%; bottom: -16px; height: 20px; border-radius: 50%; background: #f31d3b; filter: blur(18px); z-index: -1; }
+.partnership-photo { position: relative; border: 1px solid #f1d0ad; border-radius: 10px; padding: 5px; background: linear-gradient(135deg, #e0bf9630, #fff1, #a9855c50); box-shadow: 0 0 2px 2px #d3b69240, inset 0 0 4px #ffe0c4, 0 30px 50px #0006; }
+.partnership-photo img { display: block; width: 100%; aspect-ratio: 1.32; object-fit: cover; border-radius: 6px; object-position: center; }
+
+/* Keep the practical planning content within the same visual language. */
+.experience .why { padding: 80px 5vw; min-height: 0; gap: 5vw; background: #0c111a; color: var(--paper); }
+.experience .why-copy { padding: 30px 0; }
+.experience .why h2 { font-size: clamp(42px, 4.3vw, 68px); }
+.experience .why-image { min-height: 580px; border-radius: 160px 160px 8px 8px; border: 1px solid #d2b69250; clip-path: none; background-image: url('/images/networking-premium-v1.webp'); }
+.experience .why-copy > p { color: #b5b5bc; font-size: 15px; }
+.experience .why li { border-color: #d2b69225; font-size: 13px; }
+.experience .why-copy .section-label { color: var(--gold); }
+.experience .travel-sec { background: #101722; }
+.experience .travel-sec h2, .experience .faq h2 { font-size: clamp(42px, 4.5vw, 72px); }
+.experience .outcomes { background: #e9e1d5; }
+.experience .proof { background: #0b1019; }
+.experience .faq { background: #101722; }
+.experience .closing { background: #080c14; }
+.experience .closing-bg { background-image: linear-gradient(#080c15ba, #080c15e8), url('/images/daegu-portal-v1.webp'); background-position: center; }
+.experience footer { background: #080c14; }
+.experience .floating-bar { background: #10141ee8; border: 1px solid #d2b69235; box-shadow: 0 12px 40px #0007; }
+.experience .floating-pill-cta { background: #bd0b29; }
+
+@media (min-width: 1700px) {
+  .experience .section { padding-inline: max(5vw, calc((100vw - 1550px) / 2)); }
+}
+@media (max-width: 1100px) {
+  .experience .hero { min-height: 740px; }
+  .experience .hero-copy { width: 60%; }
+  .experience .hero-title { font-size: 10vw; }
+  .experience .nav-links { gap: 22px; }
+  .experience .connection { grid-template-columns: 1fr 1fr; gap: 0; padding-inline: 4vw; min-height: 720px; }
+  .experience .connection h2 { font-size: 5.5vw; }
+  .connection-values li { gap: 15px; font-size: 16px; }
+  .connection-values span { padding-left: 15px; }
+  .programme-showcase { gap: 28px; }
+  .programme-card-copy { padding: 22px; }
+  .programme-card-copy h3 { font-size: 32px; }
+  .experience .speakers-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
+  .experience .speakers .speaker-mark { height: 340px; }
+  .experience .speaker-card { min-height: 570px; }
+  .experience .partnership { grid-template-columns: .9fr 1.2fr; gap: 35px; padding-block: 100px; }
+  .partnership-actions { padding: 15px; }
+  .partnership-photo img { aspect-ratio: 1; }
+}
+@media (max-width: 900px) {
+  .experience .nav-shell { height: 72px; padding-inline: 24px; }
+  .experience .brand { font-size: 23px; }
+  .experience .nav-links { background: #0c121ef5; padding: 28px; border-bottom: 1px solid #d2b69250; }
+  .experience .nav-links > :is(button, .nav-travel) { padding: 12px; font-size: 16px; }
+  .experience .hero-copy { padding-top: 90px; }
+  .experience .section { padding: 85px 26px; }
+  .experience .connection { grid-template-columns: 1fr; gap: 25px; }
+  .experience .connection-head { max-width: 650px; }
+  .experience .connection h2 { font-size: 64px; }
+  .experience .connection-head > p { max-width: 530px; }
+  .connection-values { grid-template-columns: 1fr 1fr 1fr; gap: 15px; }
+  .connection-values li { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .connection-values span { border: 0; padding: 0; font-size: 14px; }
+  .experience .globe-stage { width: min(100%, 620px); margin: 10px auto 20px; }
+  .experience .globe-sphere { width: min(calc(100% - 60px), 520px); }
+  .experience .globe-plinth { width: 100%; }
+  .experience .programme h2 { font-size: 64px; }
+  .programme-card-copy h3 { font-size: 28px; }
+  .programme-card-copy p { font-size: 13px; max-width: 80%; }
+  .programme-card-link { width: 38px; height: 38px; right: 14px; }
+  .experience .partnership { grid-template-columns: 1fr; gap: 35px; }
+  .partnership h2 { font-size: 64px; }
+  .partnership-actions { width: fit-content; }
+  .partnership-photo img { aspect-ratio: 16 / 9; }
+  .partnership-frame { margin: 25px 10px; }
+  .experience .why { grid-template-columns: 1fr; }
+  .experience .why-image { min-height: 430px; border-radius: 8px; }
+}
+@media (max-width: 600px) {
+  body { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
+  .experience section[id], .experience #programme-details { scroll-margin-top: 84px; }
+  .experience .nav-shell { padding-inline: 22px; height: 68px; background: #0b101be8; backdrop-filter: blur(10px); }
+  .experience .nav-links { top: 68px; padding: 12px 20px 22px; border-radius: 0 0 20px 20px; box-shadow: 0 18px 35px #0006; }
+  .experience .menu-toggle { min-width: 44px; min-height: 44px; display: grid; place-items: center; }
+  .experience .mouse-spotlight, .experience .progress-rail { display: none; }
+  .experience .brand { font-size: 21px; }
+  .experience .brand-slash { height: 30px; width: 6px; }
+  .experience .hero { height: 100svh; min-height: 700px; max-height: 880px; align-items: flex-start; }
+  .experience .hero-image { inset: 0; background-position: 82% center; will-change: auto; }
+  .experience .hero-shade { background: linear-gradient(90deg, #080c158c, #080c1520), linear-gradient(0deg, #080c15 4%, #080c1585 35%, #080c1520 80%); }
+  .experience .hero-copy { margin-left: 24px; width: calc(100% - 48px); padding: clamp(108px, 15svh, 132px) 0 100px; }
+  .experience .hero-kicker { font-size: 9px; letter-spacing: .17em; }
+  .experience .hero-title { font-size: clamp(66px, 20.5vw, 108px); line-height: .94; margin: 27px 0; }
+  .experience .hero-meta { margin: 25px 0; gap: 10px; }
+  .experience .hero-meta p { font-size: 11px; letter-spacing: .16em; }
+  .experience .hero-actions { display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 28px; }
+  .experience .hero-actions .primary-btn { width: auto; padding: 15px 16px; font-size: 12px; min-height: 50px; gap: 8px; }
+  .experience .hero-actions .text-btn { display: inline-flex; font-size: 12px; gap: 7px; min-height: 44px; }
+  .experience .hero-manifesto { left: 24px; right: 24px; bottom: 28px; gap: 15px; }
+  .hero-manifesto span { font-size: 13px; letter-spacing: .22em; }
+  .experience .section { padding: 64px 24px; }
+  .experience .section-label { font-size: 9px; letter-spacing: .22em; gap: 13px; }
+  .experience .section-label::before { width: 26px; }
+  .experience .connection h2 { font-size: clamp(42px, 11.3vw, 65px); }
+  .experience .connection-head > p { font-size: 14px; }
+  .connection-values { gap: 14px; margin-bottom: 30px; }
+  .connection-values svg { width: 30px; height: 30px; }
+  .connection-values span { font-size: 12px; line-height: 1.6; }
+  .experience .globe-stage { width: calc(100% + 18px); margin-left: -9px; }
+  .experience .globe-sphere { width: calc(100% - 40px); margin-top: 20px; touch-action: pan-y; }
+  .experience .globe-plinth { height: 65px; margin-top: -10px; }
+  .experience .globe-hint-pill { margin-top: -5px; padding: 6px 14px; gap: 2px 10px; max-width: 100%; backdrop-filter: none; background: #1d2029f0; }
+  .experience .globe-controls, .experience .globe-reset-btn { font-size: 10px; }
+  .experience .globe-reset-btn { min-height: 44px; }
+  .experience .globe-city-label { font-size: 8px; letter-spacing: .06em; }
+  .experience .programme h2 { font-size: clamp(36px, 10.2vw, 48px); line-height: 1.08; margin-bottom: 20px; }
+  .programme-showcase { grid-template-columns: 1fr; gap: 26px; padding: 12px 0; }
+  .programme-card-shell:first-child, .programme-card-shell:last-child { rotate: none; }
+  .programme-photo-card { border-radius: 14px; box-shadow: 0 12px 30px #0005, 0 2px 0 #dc244440; transform: none !important; }
+  .programme-photo-card > img { height: auto; aspect-ratio: 1.5; }
+  .programme-card-copy { padding: 22px 22px 24px; }
+  .programme-card-copy h3 { font-size: 29px; margin-right: 0; }
+  .programme-card-copy p { font-size: 13px; }
+  .programme-card-link { right: 16px; top: auto; bottom: 16px; width: 44px; height: 44px; }
+  .programme-bottom { flex-wrap: wrap; gap: 18px; margin: 26px 0 34px; }
+  .programme-bottom > span { font-size: 12px; }
+  .programme-bottom > .primary-btn { width: 100%; }
+  .experience .programme-tabs-nav { flex-direction: column; gap: 10px; }
+  .experience .programme-tab-btn { width: 100%; font-size: 12px; text-align: left; padding: 12px; }
+  .experience .programme-tab-content { padding: 24px 17px; }
+  .experience .programme-header-left h3 { font-size: 28px; }
+  .experience .schedule-row { padding: 14px 10px; }
+  .experience .schedule-title { font-size: 13px; }
+  .experience .speakers-head { gap: 5px; }
+  .experience .speakers h2 { font-size: 40px; line-height: 1.05; }
+  .experience .speakers-grid { display: flex; gap: 16px; margin-top: 28px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; padding-bottom: 12px; }
+  .experience .speakers-grid::-webkit-scrollbar { display: none; }
+  .experience .speakers-grid::after { content: ''; flex: 0 0 16px; }
+  .experience .speaker-card { flex: 0 0 calc(100% - 32px); min-width: 0; min-height: 500px; scroll-snap-align: start; scroll-snap-stop: always; padding: 8px 8px 20px; box-shadow: none; transform: none !important; }
+  .experience .speakers .speaker-mark { height: 280px; }
+  .experience .speaker-info { padding: 18px 12px 0; }
+  .experience .speaker-info h3 { font-size: 28px; }
+  .experience .speaker-info p { min-height: 0; }
+  .speaker-rail-controls { display: flex; gap: 10px; align-items: center; margin-top: 12px; }
+  .speaker-rail-controls > span { flex: 1; color: #c5b8a9; font-size: 11px; }
+  .speaker-rail-controls b { display: block; margin-top: 6px; font-weight: 400; color: #7f8794; letter-spacing: .18em; }
+  .speaker-rail-controls button { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid #d2b69250; border-radius: 50%; background: #ffffff06; }
+  .speaker-rail-controls button:disabled { opacity: .3; }
+  .partnership h2 { font-size: clamp(28px, 8.7vw, 44px); display: flex; align-items: center; justify-content: space-between; gap: 10px; line-height: 1.05; }
+  .partnership .partner-cross { font-size: 30px; margin: 0; }
+  .partnership-copy > p { font-size: 14px; }
+  .partnership-copy > p br { display: none; }
+  .partnership-actions { padding: 14px; gap: 16px; width: 100%; border-radius: 10px; backdrop-filter: none; background: #ffffff08; }
+  .partnership-actions .primary-btn { width: auto; font-size: 12px; padding: 13px; flex: 1; }
+  .partnership-actions .text-btn { font-size: 11px; min-height: 44px; }
+  .experience .partnership { gap: 24px; }
+  .partnership-frame { margin: 12px 0 5px; }
+  .partnership-frame::before { inset: -20px -3px 20px -5px; }
+  .partnership-photo { padding: 3px; }
+  .partnership-photo img { aspect-ratio: 4 / 3; }
+  .experience .why-image { min-height: 330px; }
+  .experience .why { gap: 24px; }
+  .experience .why-copy { padding: 0; }
+  .experience .floating-bar { bottom: calc(10px + env(safe-area-inset-bottom)); width: calc(100% - 28px); padding: 7px; gap: 5px; background: #0d1423f5; backdrop-filter: blur(10px); border-radius: 18px; overflow: visible; }
+  .experience .floating-bar .floating-pill-btn { min-height: 44px; font-size: 11px; padding: 10px 12px; border-radius: 11px; justify-content: center; }
+  .experience .floating-bar .quick-programme, .experience .floating-bar .quick-support, .experience .floating-bar .floating-pill-cta { display: inline-flex; flex: 1; }
+  .experience .floating-bar .quick-travel, .experience .floating-bar .quick-top { display: none; }
+  .experience .floating-pill-cta { margin-left: 0; }
+  .experience .orbit, .experience .orbit span, .experience .orbit i { animation: none; }
+  .experience .modal-card { max-height: calc(100dvh - 40px); overflow-y: auto; padding: 24px 20px; overscroll-behavior: contain; }
+  .experience .closing h2 { font-size: 48px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .experience .hero-image, .experience .hero-copy, .experience [data-reveal], .experience .speaker-card { transform: none !important; opacity: 1 !important; clip-path: none !important; }
+  .experience .programme-card-shell { rotate: 0deg; }
+}

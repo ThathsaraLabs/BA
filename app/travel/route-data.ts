@@ -1,0 +1,119 @@
+export type Point = readonly [longitude: number, latitude: number];
+export type Mode = "train" | "bus" | "car";
+
+interface City {
+  name: string;
+  korean: string;
+  point: Point;
+  rail: string;
+  roadVia: Point[];
+  railVia: Point[];
+  terminal: string;
+  busConnection?: string;
+}
+
+const daejeon: Point = [127.44, 36.34];
+const gimcheon: Point = [128.12, 36.12];
+const cheonanAsan: Point = [127.104, 36.794];
+const suwon: Point = [127.001, 37.265];
+const seoulStation: Point = [126.971, 37.554];
+const miryang: Point = [128.77, 35.474];
+const northCorridor: Point[] = [daejeon, gimcheon];
+
+export const cities: City[] = [
+  {
+    name: "Busan", korean: "부산", point: [129.076, 35.180],
+    rail: "From Busan Station, look for a KTX service to Dongdaegu.",
+    railVia: [[129.041, 35.116], [129.138, 35.548], [129.119, 35.818]],
+    terminal: "Busan Central Bus Terminal (Nopo)",
+    roadVia: [[129.086, 35.28], [129.02, 35.37], miryang, [128.73, 35.72]],
+  },
+  {
+    name: "Seoul", korean: "서울", point: [126.978, 37.566],
+    rail: "Search KTX from Seoul Station to Dongdaegu Station.",
+    railVia: [seoulStation, [126.885, 37.416], cheonanAsan, ...northCorridor],
+    terminal: "Seoul Express Bus Terminal (Gyeongbu side)",
+    roadVia: [[127.09, 37.39], [127.18, 36.83], ...northCorridor],
+  },
+  {
+    name: "Incheon", korean: "인천", point: [126.705, 37.456],
+    rail: "Take local transit to Seoul Station, then look for a KTX to Dongdaegu.",
+    railVia: [[126.84, 37.52], seoulStation, [126.885, 37.416], cheonanAsan, ...northCorridor],
+    terminal: "Incheon Bus Terminal",
+    roadVia: [[126.82, 37.38], [127.08, 37.25], [127.18, 36.83], ...northCorridor],
+  },
+  {
+    name: "Gumi", korean: "구미", point: [128.344, 36.120],
+    rail: "Search for an ITX or Mugunghwa service from Gumi Station to Dongdaegu.",
+    railVia: [[128.332, 36.129], [128.397, 35.991], [128.51, 35.89]],
+    terminal: "Gumi Bus Terminal",
+    busConnection: "If your date has no Dongdaegu coach, check Gumi–Daegu services to another terminal and plan the local connection in KakaoMap.",
+    roadVia: [[128.409, 36.073], [128.48, 35.957], [128.547, 35.922]],
+  },
+  {
+    name: "Suwon", korean: "수원", point: [127.029, 37.264],
+    rail: "Search from Suwon Station to Dongdaegu. Compare direct trains with transfer options.",
+    railVia: [suwon, [127.14, 36.81], ...northCorridor],
+    terminal: "Suwon Bus Terminal",
+    roadVia: [[127.10, 37.23], [127.18, 36.83], ...northCorridor],
+  },
+  {
+    name: "Ansan", korean: "안산", point: [126.831, 37.322],
+    rail: "Take local transit to Suwon Station, then search for trains to Dongdaegu.",
+    railVia: [[126.93, 37.29], suwon, [127.14, 36.81], ...northCorridor],
+    terminal: "Ansan Bus Terminal",
+    busConnection: "Check Ansan Bus Terminal for Daegu services. If no suitable coach is listed, compare departures from Suwon.",
+    roadVia: [[126.94, 37.27], [127.08, 37.20], [127.18, 36.83], ...northCorridor],
+  },
+  {
+    name: "Gimhae", korean: "김해", point: [128.889, 35.228],
+    rail: "Use local transit to Jinyeong Station, then check trains to Dongdaegu.",
+    railVia: [[128.77, 35.285], miryang, [128.76, 35.65]],
+    terminal: "Gimhae Passenger Terminal",
+    busConnection: "Check Gimhae Passenger Terminal for Daegu services. If no suitable coach is listed, compare Changwon or Busan departures.",
+    roadVia: [[128.87, 35.30], [128.80, 35.41], miryang, [128.72, 35.70]],
+  },
+  {
+    name: "Changwon", korean: "창원", point: [128.681, 35.228],
+    rail: "Search from Changwon Jungang or Masan Station to Dongdaegu.",
+    railVia: [[128.705, 35.244], [128.77, 35.285], miryang, [128.76, 35.65]],
+    terminal: "Changwon Bus Terminal",
+    roadVia: [[128.65, 35.33], [128.55, 35.47], [128.46, 35.70], [128.51, 35.82]],
+  },
+  {
+    name: "Cheonan", korean: "천안", point: [127.152, 36.815],
+    rail: "Start at Cheonan–Asan Station for high-speed trains to Dongdaegu.",
+    railVia: [cheonanAsan, ...northCorridor],
+    terminal: "Cheonan Express or Intercity Bus Terminal",
+    roadVia: [[127.18, 36.75], ...northCorridor],
+  },
+];
+
+export const venue = {
+  name: "Yeungjin University",
+  korean: "영진전문대학교",
+  address: "대구광역시 북구 복현로 35 (영진전문대학교)",
+  point: [128.622, 35.896] as Point,
+};
+
+export const dongdaegu: Point = [128.628, 35.880];
+export const campusDirections = "https://kcenter.yju.ac.kr/guidance/directions";
+export const trainTickets = "https://smart.letskorail.com/ebizbf/EbizBfTicketSearchM.do";
+export const expressBusTickets = "https://www.kobus.co.kr/main.do";
+export const intercityBusTickets = "https://intercitybuse.tmoney.co.kr/";
+
+export function straightLineKm([lon, lat]: Point, [endLon, endLat]: Point) {
+  const radians = Math.PI / 180;
+  const a = Math.sin((endLat - lat) * radians / 2) ** 2
+    + Math.cos(lat * radians) * Math.cos(endLat * radians)
+    * Math.sin((endLon - lon) * radians / 2) ** 2;
+  return Math.round(6371 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
+}
+
+export function kakaoRoute(city: City, mode: Mode) {
+  const location = (name: string, [lon, lat]: Point) =>
+    encodeURIComponent(name) + "," + lat + "," + lon;
+  const method = mode === "car" ? "car" : "publictransit";
+  return "https://map.kakao.com/link/by/" + method + "/" +
+    location(city.korean, city.point) + "/" + location(venue.korean, venue.point);
+}

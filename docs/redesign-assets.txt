@@ -1,0 +1,35 @@
+BUSINESS ADVISOR KOREA — APPROVED UI IMPLEMENTATION
+17 November 2026
+
+Generated using the built-in ImageGen tool. Source mockups were used as visual references; the website uses real HTML, CSS and interactive components, not screenshots of the mockups.
+All production images are saved under this project's public/images directory, compressed to WebP using sharp. The source PNGs remain in the original Codex generated_images directory.
+
+ASSETS AND PROMPTS
+
+public/images/daegu-portal-v1.webp
+Source: exec-7f218c4d-1ddb-417e-b8fa-6b51066ab6a5.png
+Reference: approved hero mockup exec-6ddae7b3-dc7c-4aaf-92f6-67f4a266fe3e.png
+Prompt: Extract the full-bleed photographic background from the approved mockup. Remove all typography, logos, navigation, buttons, interface and remaining lines. Preserve the 16:9 obsidian corporate terrace, reflections, huge translucent black/crimson architectural portal on the right framing Daegu and 83 Tower at twilight, mountain horizon, stone boardroom table and chairs, four distant anonymous professionals. Keep the left third dark and open for the live headline. Preserve realistic lighting, depth and champagne accents. Naturally fill former text areas with terrace architecture.
+
+public/images/networking-premium-v1.webp
+Source: exec-a4c3de17-7172-41a0-ad51-aa094650ed1e.png
+Prompt: Wide 3:2 full-bleed editorial photo. Four anonymous Sri Lankan business professionals, two men and two women aged 30–45, in elegant navy, ivory and burgundy full suits, warmly conversing around a laptop and coffee in a luxury Daegu conference lounge. Candid eye contact, believable faces and hands. Eye-level medium wide shot. Champagne architectural lighting, dark marble and brushed bronze, softly blurred attendees. High-end business photography, realistic skin tones and subtle film grain. No text, logos, UI, frame or illustration. Subjects centered in the upper two thirds with room below.
+
+public/images/workshop-premium-v1.webp
+Source: exec-fa6a9858-6eb6-4828-a475-fb8c881f41b6.png
+Prompt: Wide 3:2 full-bleed editorial photo. A Sri Lankan male business advisor in a navy full suit, three-quarter rear view on the left, giving a friendly practical business workshop to six engaged Sri Lankan adults in full suits at a long conference table. Luxury Daegu office, tall windows, distant Korean city, warm daylight, champagne bronze details, notebooks and water glasses. Eye-level candid professional photography, natural faces and hands, a clear sense of learning and professional exchange. Navy, ivory and burgundy palette. No text, logos, captions, UI or frame.
+
+public/images/daegu-interior-v1.webp
+Source: exec-1d94ec55-02b0-4349-8668-e210d8c6d543.png
+Reference: approved globe mockup exec-2bf72416-1788-4dfe-90d3-4dcaf92c9b21.png
+Prompt: Extract the empty architectural room background, 16:9. Remove Earth, orbit rings, route lines, all labels, text, icons, buttons, control pills and circular plinth. Retain a luxury corporate interior: obsidian wall on the left, bronze vertical fins at the edges, enormous angled overhead slab, tall right-side windows overlooking blue-hour Daegu and mountain silhouettes. Polished dark marble floor with champagne reflections and faint crimson light spill. Dark cinematic photography with realistic charcoal navy, black stone and brushed metal textures. Empty dark space for live typography and a live 3D object. No people, globe, furniture, plinth, text, UI or logos.
+
+public/images/booking-partnership-v1.webp
+Source: existing approved meeting illustration exec-50f36c5c-3984-484e-a1de-61716e00cc7b.png
+No new generation or identity alteration in this implementation. The approved group photo was compressed and displayed only in the Booking Ministry partnership section. On-image captions and portrait initials were subsequently removed at the user's request; descriptive image alternative text is retained.
+
+BEHAVIOUR
+Desktop hero parallax, short staggered reveals, dimensional pointer tilt on programme and speaker cards, button highlights, and the existing genuine draggable 3D globe. Phones use native scrolling, smaller opacity/translation reveals and a swipeable speaker gallery. Reduced-motion preferences disable decorative motion. Globe coordinates and sphere/route projection code are unchanged; mobile rendering resolution is bounded during dragging and restored when dragging ends.
+Programme photo cards open the corresponding day in an expandable schedule. Keyboard navigation is supported for day tabs and speaker profiles. Speaker dialog supports Escape, focus containment and focus restoration.
+Ticket links go to https://www.bookingministry.com/ ; booking support goes to https://www.bookingministry.com/contact . There is no event-specific checkout integration.
+The financial calculator, calculation state, formulas and navigation entry were removed at the user's request.
