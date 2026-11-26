@@ -315,8 +315,8 @@
 .experience .summit-branding { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 16px; }
 .experience .summit-branding img { width: clamp(132px, 16vw, 210px); height: auto; border-radius: 4px; }
 .experience .summit-branding a { font-size: 13px; text-decoration: underline; text-underline-offset: 4px; }
-.experience .organizer-logo { background: #000; display: grid; place-items: center; }
-.experience .organizer-logo img { width: min(88%, 560px); height: auto; object-fit: contain; }
+.experience .organizer-logo { background: #000; display: grid; place-items: center; width: min(100%, 340px); margin-inline: auto; padding: 14px; }
+.experience .organizer-logo img { width: min(100%, 270px); height: auto; aspect-ratio: auto; object-fit: contain; }
 .experience .partnership-actions { flex-wrap: wrap; }
 .experience .nav-utilities { display: flex; align-items: center; gap: 8px; }
 .experience .theme-toggle { min-height: 42px; padding: 0 12px; border: 1px solid #d2b69265; border-radius: 8px; font-size: 13px; white-space: nowrap; cursor: pointer; }
@@ -326,7 +326,7 @@ html[data-theme="light"] .theme-to-dark { display: inline; }
 .experience .summit-wordmark { width: min(100%, 475px); margin: 18px 0 16px; }
 .experience .summit-wordmark img { width: 100%; height: auto; border-radius: 10px; box-shadow: 0 16px 45px #0005; }
 .experience .hero-organizer { display: inline-flex; gap: 12px; align-items: center; background: #0c111cec; border: 1px solid #d2b69260; border-radius: 9px; padding: 7px 12px 7px 7px; color: #fff; }
-.experience .hero-organizer img { width: 80px; height: auto; border-radius: 5px; }
+.experience .hero-organizer img { width: clamp(112px, 14vw, 164px); flex: none; height: auto; border-radius: 5px; }
 .experience .hero-organizer span { display: grid; gap: 2px; }
 .experience .hero-organizer small { color: #dac4a5; font-size: 11px; }
 .experience .hero-organizer strong { font-size: 15px; }
