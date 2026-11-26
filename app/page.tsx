@@ -341,8 +341,8 @@ export default function Home() {
         <button className="brand" onClick={() => scrollTo("top")} aria-label="Back to top">
           <span className="brand-slash" />
           <span>
-            Business Advisor
-            <small>KOREA · DAEGU 2026</small>
+            Business Summit
+            <small>SOUTH KOREA · 2026</small>
           </span>
         </button>
 
@@ -377,15 +377,11 @@ export default function Home() {
 
         <div className="hero-copy">
           <p className="hero-kicker">Daegu, South Korea</p>
-          <h1 className="summit-wordmark">
-            <span className="sr-only">Business Advisor Business Summit</span>
-            <img src={sitePath("/images/business-summit-logo.png")} alt="" width={880} height={328} fetchPriority="high" />
-          </h1>
-          <a className="hero-organizer" href="#partners">
-            <img src={sitePath("/images/booking-ministry-logo.webp")} alt="" width={700} height={340} />
-            <span><small>Organised by</small><strong>Booking Ministry</strong></span>
-            <ArrowRight size={18} aria-hidden="true" />
+          <a className="summit-wordmark summit-main-logo" href="#partners">
+            <img src={sitePath("/images/booking-ministry-logo.webp")} alt="Booking Ministry" width={700} height={340} fetchPriority="high" />
           </a>
+          <h1 className="summit-main-title">Business Summit <span>– South Korea</span></h1>
+          <a className="summit-organizer-credit" href="#partners">Organised by <strong>Booking Ministry</strong></a>
 
           <div className="hero-meta">
             <p>
@@ -458,7 +454,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <div className="programme-bottom" data-reveal><span>Business Advisor Korea 2026</span><i /><a className="primary-btn" href={BOOKING_URL}>Check Tickets <ArrowRight size={18} /></a></div>
+        <div className="programme-bottom" data-reveal><span>Business Summit – South Korea</span><i /><a className="primary-btn" href={BOOKING_URL}>Check Tickets <ArrowRight size={18} /></a></div>
 
         {/* Day Selector Tabs */}
         <details className="programme-details" id="programme-details" ref={programmeDetailsRef} onToggle={() => ScrollTrigger.refresh()}>
