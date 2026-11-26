@@ -147,6 +147,41 @@ export const cities: City[] = [
     terminal: "Jeonju Express or Intercity Bus Terminal",
     roadVia: [[127.61, 35.87], [127.87, 35.65], [128.40, 35.79]],
   },
+  {
+    name: "Chuncheon", korean: "춘천 · 강원도", point: [127.730, 37.881],
+    rail: "From Chuncheon in Gangwon-do, compare a connection via Yongsan and a KTX to Dongdaegu.",
+    railVia: [[127.1, 37.59], [126.965, 37.529], cheonanAsan, ...northCorridor],
+    terminal: "Chuncheon Intercity Bus Terminal",
+    roadVia: [[127.91, 37.35], [128.21, 37.13], [128.20, 36.60], [128.15, 36.34]],
+  },
+  {
+    name: "Pohang", korean: "포항", point: [129.343, 36.019],
+    rail: "Search for KTX from Pohang Station to Dongdaegu.",
+    railVia: [[129.341, 36.071], [129.14, 35.86], [128.80, 35.84]],
+    terminal: "Pohang Intercity Bus Terminal",
+    roadVia: [[129.15, 36.07], [128.93, 35.98], [128.73, 35.90]],
+  },
+  {
+    name: "Jinju", korean: "진주", point: [128.108, 35.181],
+    rail: "Search Jinju Station to Dongdaegu and compare direct KTX with connecting services.",
+    railVia: [[128.118, 35.151], [128.58, 35.24], miryang, [128.76, 35.65]],
+    terminal: "Jinju Express or Intercity Bus Terminal",
+    roadVia: [[128.23, 35.27], [128.42, 35.44], [128.43, 35.74]],
+  },
+  {
+    name: "Wonju", korean: "원주", point: [127.920, 37.342],
+    rail: "Compare rail connections to Daegu via Seoul with intercity coach options.",
+    railVia: [[127.82, 37.36], [127.22, 37.53], seoulStation, cheonanAsan, ...northCorridor],
+    terminal: "Wonju Intercity Bus Terminal",
+    roadVia: [[128.21, 37.13], [128.20, 36.60], [128.15, 36.34]],
+  },
+  {
+    name: "Chungju", korean: "충주", point: [127.926, 36.991],
+    rail: "Compare trains from Chungju with a transfer at Bubal for travel via Seoul.",
+    railVia: [[127.49, 37.27], [127.11, 37.40], seoulStation, cheonanAsan, ...northCorridor],
+    terminal: "Chungju Public Bus Terminal",
+    roadVia: [[128.06, 36.78], [128.16, 36.52], [128.15, 36.34]],
+  },
 ];
 
 export const venue = {
