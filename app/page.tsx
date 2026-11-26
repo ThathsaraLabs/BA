@@ -385,7 +385,7 @@ export default function Home() {
 
           <div className="hero-meta">
             <p>
-              <CalendarDays size={18} className="text-red-500" /> 12–13 December 2026
+              <CalendarDays size={18} className="text-red-500" /> 13 December 2026
             </p>
             <p>
               <MapPin size={18} className="text-red-500" /> {EVENT_VENUE}
@@ -620,7 +620,7 @@ export default function Home() {
             Turn today’s income into <em>tomorrow’s freedom.</em>
           </h2>
           <p>
-            Sri Lankans across South Korea make immense personal sacrifices in factories, sites, and offices. This two-day conference provides the exact strategic roadmap needed to safeguard and multiply your earnings into self-sustaining ventures.
+            Sri Lankans across South Korea make immense personal sacrifices in factories, sites, and offices. The summit provides the exact strategic roadmap needed to safeguard and multiply your earnings into self-sustaining ventures.
           </p>
           <ul>
             <li>
@@ -792,7 +792,7 @@ export default function Home() {
             <a href="#top" className="summit-footer-logo" aria-label="Business Summit home">
               <img src={sitePath("/images/summit-footer-logo.png")} alt="" loading="lazy" />
             </a>
-            <p>12–13 December 2026<br />Yeungjin University · Daegu, South Korea</p>
+            <p>13 December 2026<br />Yeungjin University · Daegu, South Korea</p>
           </div>
           <nav className="summit-footer-group" aria-label="Explore the summit">
             <h2>Explore the summit</h2>

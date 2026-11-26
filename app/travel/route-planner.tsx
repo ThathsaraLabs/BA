@@ -169,7 +169,7 @@ export default function RoutePlanner() {
             <h2 id="travel-heading">Plan your trip<br className="journey-heading-break" /> to <em>Daegu.</em></h2>
             <p>Choose your departure city and how you’re travelling to Yeungjin University.</p>
           </div>
-          <div className="journey-event"><MapPin size={19} /><span>Bokhyeon Campus, Daegu<small>12–13 December 2026</small></span></div>
+          <div className="journey-event"><MapPin size={19} /><span>Bokhyeon Campus, Daegu<small>13 December 2026</small></span></div>
         </section>
 
         <div className="journey-layout">
