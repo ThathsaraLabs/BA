@@ -440,20 +440,31 @@ html[data-theme="light"] .summit-footer-organizer small { color: #724c23; }
  .header-presenter img { width: 64px; }
  .experience .nav-shell { padding-inline: 12px; min-height: 80px; }
 }
-.experience .enterprise-journey { position: relative; width: min(88%, 390px); margin: auto; padding: clamp(17px, 4vw, 30px); list-style: none; border: 1px solid #e7d4b151; border-radius: 20px; color: #fff8ed; background: #101622f2; box-shadow: 0 20px 46px #0005; }
-.enterprise-journey li { position: relative; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 13px; align-items: center; padding: 10px 0; }
-.enterprise-journey li:not(:last-child)::after { content: ""; position: absolute; top: calc(50% + 22px); bottom: calc(-50% + 22px); left: 21px; width: 2px; background: #e5b978; transform-origin: top; }
-.enterprise-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: #292432; color: #ffce8c; }
-.enterprise-journey strong, .enterprise-journey small { display: block; }
-.enterprise-journey strong { font-size: 16px; }
-.enterprise-journey small { margin-top: 4px; color: #d0cbcd; font-size: 12px; line-height: 1.45; }
-.experience .outcomes-copy > p { color: #493f37; line-height: 1.6; margin-bottom: 22px; }
-@media (prefers-reduced-motion: no-preference) {
-  .enterprise-in-view li { animation: enterprise-step .55s ease-out both; }
-  .enterprise-in-view li:nth-child(2) { animation-delay: .36s; }
-  .enterprise-in-view li:nth-child(3) { animation-delay: .72s; }
-  .enterprise-in-view li::after { animation: enterprise-line .42s ease-out .26s both; }
-  .enterprise-in-view li:nth-child(2)::after { animation-delay: .62s; }
+.experience .enterprise-outcomes { display: block; min-height: auto; color: #17202d; }
+.enterprise-intro, .enterprise-journey, .enterprise-takeaways { max-width: 1250px; margin-inline: auto; }
+.enterprise-intro > h2 { max-width: 850px; }
+.experience .enterprise-intro .section-label { color: #604631; }
+.experience .outcomes-copy > p { color: #493f37; line-height: 1.6; margin: 0 0 26px; }
+.enterprise-journey { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; padding: 0; list-style: none; }
+.enterprise-journey li { position: relative; isolation: isolate; display: flex; align-items: flex-end; overflow: hidden; min-height: clamp(330px, 38vw, 490px); border-radius: 15px; background: #17202c; color: #fff8ed; }
+.enterprise-journey li::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, #080c15fa 0%, #080c15ae 32%, transparent 69%); }
+.enterprise-photo { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
+.enterprise-caption { padding: clamp(16px, 2.4vw, 30px); }
+.enterprise-icon { display: grid; place-items: center; width: 43px; height: 43px; margin-bottom: 12px; border: 1px solid #ffd39199; border-radius: 50%; background: #211e26bd; color: #ffce8c; }
+.enterprise-caption strong, .enterprise-caption small { display: block; }
+.enterprise-caption strong { font-size: clamp(19px, 2.25vw, 30px); line-height: 1.1; }
+.enterprise-caption small { margin-top: 8px; color: #eee7df; font-size: 14px; line-height: 1.45; }
+.enterprise-takeaways { margin-top: 28px; }
+@media (max-width: 690px) {
+  .enterprise-journey { grid-template-columns: 1fr; }
+  .enterprise-journey li { min-height: 275px; }
+  .enterprise-photo { object-position: center 43%; }
 }
-@keyframes enterprise-step { from { opacity: .3; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes enterprise-line { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@media (prefers-reduced-motion: no-preference) {
+  .enterprise-in-view li { animation: enterprise-card-in .7s ease-out both; }
+  .enterprise-in-view li:nth-child(2) { animation-delay: .2s; }
+  .enterprise-in-view li:nth-child(3) { animation-delay: .4s; }
+  .enterprise-in-view .enterprise-photo { animation: enterprise-photo-in 2s ease-out both; }
+}
+@keyframes enterprise-card-in { from { opacity: .55; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes enterprise-photo-in { from { transform: scale(1.14); } to { transform: scale(1); } }

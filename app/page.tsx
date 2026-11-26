@@ -32,9 +32,9 @@ const BOOKING_SUPPORT_URL = `${BOOKING_URL}contact`;
 const EVENT_VENUE = "Yeungjin University, Daegu";
 
 const enterpriseSteps = [
-  { title: "Earn in South Korea", detail: "Set a goal for what you earn abroad.", Icon: Building2 },
-  { title: "Build your savings", detail: "Set aside money and plan your startup costs.", Icon: PiggyBank },
-  { title: "Start and grow in Sri Lanka", detail: "Return with a plan to launch and build your business.", Icon: Sprout },
+  { title: "Earn in South Korea", detail: "Set a goal for what you earn abroad.", image: "enterprise-korea.webp", Icon: Building2 },
+  { title: "Build your savings", detail: "Set aside money and plan your startup costs.", image: "enterprise-savings.webp", Icon: PiggyBank },
+  { title: "Start and grow in Sri Lanka", detail: "Return with a plan to launch and build your business.", image: "enterprise-sri-lanka.webp", Icon: Sprout },
 ];
 
 function EnterpriseJourney() {
@@ -55,10 +55,14 @@ function EnterpriseJourney() {
 
   return (
     <ol ref={journey} className="enterprise-journey" aria-label="From working in Korea to building a business in Sri Lanka">
-      {enterpriseSteps.map(({ title, detail, Icon }) => (
+      {enterpriseSteps.map(({ title, detail, image, Icon }) => (
         <li key={title}>
-          <span className="enterprise-icon"><Icon size={22} aria-hidden="true" /></span>
-          <span><strong>{title}</strong><small>{detail}</small></span>
+          <img className="enterprise-photo" src={sitePath("/images/" + image)} alt="" loading="lazy" />
+          <div className="enterprise-caption">
+            <span className="enterprise-icon"><Icon size={21} aria-hidden="true" /></span>
+            <strong>{title}</strong>
+            <small>{detail}</small>
+          </div>
         </li>
       ))}
     </ol>
@@ -680,16 +684,16 @@ export default function Home() {
       </section>
 
 
-      <section className="outcomes section">
-        <div className="outcomes-visual" data-reveal>
-          <EnterpriseJourney />
-        </div>
-        <div className="outcomes-copy" data-reveal>
+      <section className="outcomes section enterprise-outcomes">
+        <div className="outcomes-copy enterprise-intro">
           <div className="section-label">What You Take Home</div>
           <h2>
             From earning in Korea to <em>building a business in Sri Lanka.</em>
           </h2>
           <p>At the summit, learn how to set a savings target, evaluate a business idea, and plan your first steps before you return.</p>
+        </div>
+        <EnterpriseJourney />
+        <div className="outcomes-copy enterprise-takeaways">
           <ol>
             {outcomes.map((item, i) => (
               <li key={item}>
