@@ -338,13 +338,16 @@ export default function Home() {
 
       {/* Navigation */}
       <nav className="nav-shell" aria-label="Primary navigation">
-        <button className="brand summit-nav-brand" onClick={() => scrollTo("top")} aria-label="Business Summit – South Korea, back to top">
-          <img src={sitePath("/images/booking-ministry-logo.webp")} alt="Booking Ministry" width={700} height={340} />
-          <span>
-            Business Summit – South Korea
-            <small>2026</small>
-          </span>
-        </button>
+        <div className="header-branding">
+          <button className="brand summit-nav-brand" onClick={() => scrollTo("top")} aria-label="Business Advisor – Business Summit – South Korea, back to top">
+            <img src={sitePath("/images/business-advisor-logo.jpeg")} alt="Business Advisor" width={432} height={442} />
+            <span>Business Advisor – Business Summit – South Korea</span>
+          </button>
+          <a className="header-presenter" href={BOOKING_URL} aria-label="By Booking Ministry">
+            <span>by</span>
+            <img src={sitePath("/images/booking-ministry-logo.webp")} alt="Booking Ministry" width={700} height={340} />
+          </a>
+        </div>
 
         <div className={`nav-links ${menuOpen ? "open" : ""}`}>
           <button onClick={() => scrollTo("story")}>The Event</button>
