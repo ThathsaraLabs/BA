@@ -408,3 +408,8 @@ html[data-theme="light"] .summit-footer-organizer small { color: #724c23; }
   .experience .summit-nav-brand { gap: 6px; font-size: 15px; }
   .experience .summit-nav-brand small { font-size: 7px; letter-spacing: .13em; }
 }
+.experience .summit-nav-brand > span { white-space: normal; line-height: 1.08; }
+@media (max-width: 480px) {
+  .experience .summit-nav-brand { min-width: 0; }
+  .experience .nav-utilities { flex-shrink: 0; }
+}

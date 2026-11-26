@@ -341,8 +341,8 @@ export default function Home() {
         <button className="brand summit-nav-brand" onClick={() => scrollTo("top")} aria-label="Business Summit – South Korea, back to top">
           <img src={sitePath("/images/booking-ministry-logo.webp")} alt="Booking Ministry" width={700} height={340} />
           <span>
-            Business Summit
-            <small>SOUTH KOREA · 2026</small>
+            Business Summit – South Korea
+            <small>2026</small>
           </span>
         </button>
 
