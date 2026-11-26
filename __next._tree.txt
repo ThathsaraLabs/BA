@@ -1,5 +1,5 @@
 :HL["/BA/_next/static/chunks/3z2_9_ichqg9u.css","style"]
-:HL["/BA/_next/static/chunks/1ibf-8e1qwiye.css","style"]
+:HL["/BA/_next/static/chunks/41ao4exule_dl.css","style"]
 :HL["/BA/_next/static/chunks/2kyo3qnugqh10.css","style"]
 :HL["/BA/images/daegu-portal-v1.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"SYTl2oyfk-dBWCmPNewZR"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"MW3V49Njse2ti20bwk8Zk"}

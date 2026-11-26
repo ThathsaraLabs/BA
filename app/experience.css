@@ -148,7 +148,7 @@
 .experience .why { padding: 80px 5vw; min-height: 0; gap: 5vw; background: #0c111a; color: var(--paper); }
 .experience .why-copy { padding: 30px 0; }
 .experience .why h2 { font-size: clamp(42px, 4.3vw, 68px); }
-.experience .why-image { min-height: 580px; border-radius: 160px 160px 8px 8px; border: 1px solid #d2b69250; clip-path: none; background-image: url('/images/networking-premium-v1.webp'); }
+.experience .why-image { min-height: 580px; border-radius: 160px 160px 8px 8px; border: 1px solid #d2b69250; clip-path: none; background-image: url('/images/daegu-summit-auditorium.webp'); background-position: 38% center; }
 .experience .why-copy > p { color: #b5b5bc; font-size: 15px; }
 .experience .why li { border-color: #d2b69225; font-size: 13px; }
 .experience .why-copy .section-label { color: var(--gold); }
