@@ -790,16 +790,31 @@ export default function Home() {
       <RoutePlanner />
 
       {/* Footer */}
-      <footer>
-        <div className="brand">
-          <span className="brand-slash" />
-          <span>
-            Business Advisor
-            <small>KOREA · DAEGU 2026</small>
-          </span>
+      <footer id="site-footer" className="summit-footer">
+        <div className="summit-footer-grid">
+          <div className="summit-footer-brand">
+            <a href="#top" className="summit-footer-logo" aria-label="Business Summit home">
+              <img src={sitePath("/images/summit-footer-logo.png")} alt="" loading="lazy" />
+            </a>
+            <p>12–13 December 2026<br />Yeungjin University · Daegu, South Korea</p>
+          </div>
+          <nav className="summit-footer-group" aria-label="Explore the summit">
+            <h2>Explore the summit</h2>
+            <a href="#programme">Programme</a>
+            <a href="#speakers">Speakers</a>
+            <a href="#travel">Travel Guide</a>
+          </nav>
+          <div className="summit-footer-group">
+            <h2>Organized by</h2>
+            <a className="summit-footer-organizer" href={BOOKING_URL}>Booking Ministry <ArrowRight size={15} aria-hidden="true" /></a>
+            <a href={BOOKING_SUPPORT_URL}>Booking support</a>
+            <a href={BUSINESS_ADVISOR_FACEBOOK}>Business Advisor on Facebook</a>
+          </div>
         </div>
-        <p>Empowering Sri Lankans beyond borders.</p>
-        <span>© 2026 Business Advisor. All rights reserved.</span>
+        <div className="summit-footer-bottom">
+          <small>© 2026 Business Advisor. All rights reserved.</small>
+          <a href="#top">Back to top <ArrowUp size={15} aria-hidden="true" /></a>
+        </div>
       </footer>
 
       {/* Floating Bottom Quick Action Pill Bar */}

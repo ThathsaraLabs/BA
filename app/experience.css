@@ -364,3 +364,29 @@ html[data-theme="light"] .journey-page .journey-map { --journey-line: #39495e; -
   .experience .hero-actions .hero-facebook { font-size: 13px; }
   .experience .theme-toggle { min-height: 40px; padding-inline: 9px; }
 }
+.experience .summit-footer {
+  --footer-muted: #b8c1d1;
+  --footer-line: #ffffff26;
+  display: block;
+  padding: clamp(36px, 6vw, 78px) 5vw 24px;
+  color: #f7f3ee;
+  border-top: 1px solid var(--footer-line);
+}
+.summit-footer-grid, .summit-footer-bottom { max-width: 1260px; margin-inline: auto; }
+.summit-footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 36px; }
+.summit-footer-logo { display: inline-block; width: min(240px, 100%); background: #fff; border-radius: 8px; padding: 12px; }
+.summit-footer-logo img { display: block; width: 100%; aspect-ratio: 3.06; object-fit: contain; }
+.experience .summit-footer p { margin: 14px 0 0; color: var(--footer-muted); line-height: 1.7; font-size: 14px; }
+.summit-footer-group { display: grid; align-content: start; justify-items: start; gap: 12px; }
+.experience .summit-footer h2 { margin: 0 0 3px; font-size: 16px; font-weight: 700; }
+.summit-footer-group a, .summit-footer-bottom { color: var(--footer-muted); font-size: 14px; }
+.summit-footer-group a:hover, .summit-footer-bottom a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.summit-footer-organizer, .summit-footer-bottom a { display: inline-flex; align-items: center; gap: 8px; }
+.summit-footer-group .summit-footer-organizer { font-weight: 700; color: inherit; }
+.summit-footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 1px solid var(--footer-line); margin-top: 36px; padding-top: 20px; }
+html[data-theme="light"] .experience .summit-footer { --footer-muted: #4d5c70; --footer-line: #c5c9d2; color: #182436; }
+html[data-theme="light"] .summit-footer-logo { border: 1px solid var(--footer-line); }
+@media (max-width: 680px) {
+  .summit-footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 18px; }
+  .summit-footer-brand { grid-column: 1 / -1; }
+}
