@@ -847,6 +847,9 @@ export default function Home() {
         </div>
         <div className="summit-footer-bottom">
           <small>© 2026 Business Advisor. All rights reserved.</small>
+          <a className="developer-credit" href="https://vector-labs-ai.vercel.app/" target="_blank" rel="noopener noreferrer">
+            Powered by <strong>Vector Labs AI</strong>
+          </a>
           <a href="#top">Back to top <ArrowUp size={15} aria-hidden="true" /></a>
         </div>
       </footer>
