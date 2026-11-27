@@ -2,4 +2,4 @@
 :HL["/BA/_next/static/chunks/30yw8ktpkkrbr.css","style"]
 :HL["/BA/_next/static/chunks/0uhcova9rtwbz.css","style"]
 :HL["/BA/images/daegu-portal-v1.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"wMcA0-dxW2jHmQXMg25em"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"uCuf-__w7x3K6RjFjY5GD"}
