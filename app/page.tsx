@@ -28,6 +28,7 @@ import InteractiveGlobe from "./interactive-globe";
 
 const BUSINESS_ADVISOR_FACEBOOK = "https://www.facebook.com/BusinessadvisorLK";
 const BOOKING_URL = "https://www.bookingministry.com/";
+const TICKET_URL = "https://www.bookingministry.com/events/business-advisor-business-summit-deagu-south-korea";
 const BOOKING_SUPPORT_URL = `${BOOKING_URL}contact`;
 const EVENT_VENUE = "Yeungjin University, Daegu";
 
@@ -395,7 +396,7 @@ export default function Home() {
           <button onClick={() => scrollTo("speakers")}>Speakers</button>
           <button onClick={() => scrollTo("partners")}>Organizer</button>
           <a className="nav-travel" href="#travel" onClick={() => setMenuOpen(false)}>Travel</a>
-          <a className="nav-cta" href={BOOKING_URL}>
+          <a className="nav-cta" href={TICKET_URL}>
             Tickets <ArrowRight size={16} />
           </a>
         </div>
@@ -499,7 +500,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <div className="programme-bottom" data-reveal><span>Business Summit – South Korea</span><i /><a className="primary-btn" href={BOOKING_URL}>Check Tickets <ArrowRight size={18} /></a></div>
+        <div className="programme-bottom" data-reveal><span>Business Summit – South Korea</span><i /><a className="primary-btn" href={TICKET_URL}>Check Tickets <ArrowRight size={18} /></a></div>
 
         {/* Day Selector Tabs */}
         <details className="programme-details" id="programme-details" ref={programmeDetailsRef} onToggle={() => ScrollTrigger.refresh()}>
@@ -555,7 +556,7 @@ export default function Home() {
               </span>
               <a
                 className="primary-btn !min-h-[44px] !py-2 !px-5 text-sm"
-                href={BOOKING_URL}
+                href={TICKET_URL}
               >
                 Check Ticket Availability <ArrowRight size={16} />
               </a>
@@ -644,7 +645,7 @@ export default function Home() {
           <h2>Booking Ministry</h2>
           <p>Booking Ministry organizes the Business Advisor Business Summit in Daegu, featuring the Business Advisor team from Sri Lanka.</p>
           <div className="partnership-actions">
-            <a className="primary-btn" href={BOOKING_URL}>Check Tickets <ArrowRight size={17} /></a>
+            <a className="primary-btn" href={TICKET_URL}>Check Tickets <ArrowRight size={17} /></a>
             <a className="text-btn" href={BOOKING_SUPPORT_URL}>Booking Support</a>
             <a className="text-btn" href={BUSINESS_ADVISOR_FACEBOOK} target="_blank" rel="noreferrer">Business Advisor on Facebook <ArrowRight size={16} /></a>
           </div>
@@ -802,7 +803,7 @@ export default function Home() {
           </p>
 
           <div className="closing-cta-row">
-            <a className="primary-btn large" href={BOOKING_URL}>
+            <a className="primary-btn large" href={TICKET_URL}>
               Check Tickets <ArrowRight size={18} />
             </a>
             <a className="secondary-btn" href={BOOKING_SUPPORT_URL}>
@@ -868,7 +869,7 @@ export default function Home() {
         >
           <MessageCircle size={15} /> Support
         </a>
-        <a className="floating-pill-btn floating-pill-cta" href={BOOKING_URL}>
+        <a className="floating-pill-btn floating-pill-cta" href={TICKET_URL}>
           Tickets <ArrowRight size={14} />
         </a>
         <button
@@ -958,7 +959,7 @@ export default function Home() {
             <div className="flex gap-3 justify-end pt-3 border-t border-neutral-800">
               <a
                 className="primary-btn !min-h-[46px] !text-sm"
-                href={BOOKING_URL}
+                href={TICKET_URL}
               >
                 Check Tickets <ArrowRight size={16} />
               </a>
