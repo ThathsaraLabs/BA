@@ -7,6 +7,12 @@ import { aircraftFrame, flightArc, globePainter, initialView, projector, radians
 
 const cities = asiaGlobe.markers.map((city) => ({ ...city, point: surfacePoint(city.lat, city.lon) }));
 const arc = flightArc(cities[0].point, cities[1].point);
+const [origin, destination] = cities;
+const deltaLat = (destination.lat - origin.lat) * radians;
+const deltaLon = (destination.lon - origin.lon) * radians;
+const haversine = Math.sin(deltaLat / 2) ** 2
+  + Math.cos(origin.lat * radians) * Math.cos(destination.lat * radians) * Math.sin(deltaLon / 2) ** 2;
+const routeDistanceKm = Math.round(6371 * 2 * Math.atan2(Math.sqrt(haversine), Math.sqrt(1 - haversine)));
 
 export default function InteractiveGlobe() {
   const stage = useRef<HTMLDivElement>(null);
@@ -17,6 +23,26 @@ export default function InteractiveGlobe() {
   const markers = useRef<(HTMLDivElement | null)[]>([]);
   const reset = useRef<(() => void) | null>(null);
   const [status, setStatus] = useState<"loading" | "ready" | "unavailable">("loading");
+  const [distance, setDistance] = useState(routeDistanceKm);
+
+  useEffect(() => {
+    const element = stage.current;
+    if (!element || window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+    let frame = 0;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      observer.disconnect();
+      const start = performance.now();
+      const tick = (now: number) => {
+        const progress = Math.min((now - start) / 2200, 1);
+        setDistance(Math.round(routeDistanceKm * (1 - (1 - progress) ** 3)));
+        if (progress < 1) frame = requestAnimationFrame(tick);
+      };
+      frame = requestAnimationFrame(tick);
+    }, { threshold: .25 });
+    observer.observe(element);
+    return () => { observer.disconnect(); cancelAnimationFrame(frame); };
+  }, []);
 
   useEffect(() => {
     const card = stage.current;
@@ -196,6 +222,10 @@ export default function InteractiveGlobe() {
       <div className="globe-overlay-info">
         <span className="globe-route-caption">Colombo <span>↗</span> Daegu</span>
         <p className="text-xs text-neutral-400 mt-1">Two countries. One shared ambition.</p>
+        <div className="globe-distance" aria-label={`Colombo to Daegu, approximately ${routeDistanceKm.toLocaleString("en-US")} kilometres great-circle distance`}>
+          <strong aria-hidden="true">~{distance.toLocaleString("en-US")} <span>km</span></strong>
+          <small>Colombo to Daegu · great-circle distance</small>
+        </div>
       </div>
       <div className="globe-view" data-ready={ready}>
         {!ready && (

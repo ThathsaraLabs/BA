@@ -498,3 +498,9 @@ html[data-theme="light"] .summit-footer-organizer small { color: #724c23; }
 .experience .hero-organizer-stack { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin-top: 16px; width: fit-content; }
 .hero-organizer-stack span { font-size: 12px; letter-spacing: .08em; color: #e7d0ad; }
 .hero-organizer-stack img { display: block; width: clamp(145px, 17vw, 205px); height: auto; border-radius: 7px; }
+.experience .globe-distance { margin-top: 10px; text-align: center; }
+.globe-distance strong { display: block; color: #f7dfb8; font-size: clamp(28px, 4vw, 48px); line-height: 1.1; font-weight: 500; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+.globe-distance strong span { font-size: .42em; letter-spacing: 0; }
+.globe-distance small { display: block; margin-top: 5px; font-size: 10px; color: #d3d2d5; }
+html[data-theme="light"] .globe-distance strong { color: #6a4117; }
+html[data-theme="light"] .globe-distance small { color: #4d5c70; }
