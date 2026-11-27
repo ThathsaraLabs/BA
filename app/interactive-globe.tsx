@@ -21,6 +21,7 @@ export default function InteractiveGlobe() {
   const path = useRef<SVGPathElement>(null);
   const traveller = useRef<SVGGElement>(null);
   const markers = useRef<(HTMLDivElement | null)[]>([]);
+  const distanceLabel = useRef<HTMLDivElement>(null);
   const reset = useRef<(() => void) | null>(null);
   const [status, setStatus] = useState<"loading" | "ready" | "unavailable">("loading");
   const [distance, setDistance] = useState(routeDistanceKm);
@@ -87,6 +88,12 @@ export default function InteractiveGlobe() {
         paint(yaw, pitch, resolution);
         route = arc.map(project);
         line.setAttribute("d", routeFrame(route));
+        const midpoint = route[Math.floor(route.length / 2)];
+        if (distanceLabel.current) {
+          distanceLabel.current.hidden = midpoint.z < 0;
+          distanceLabel.current.style.left = `${(midpoint.x + 1) * 50}%`;
+          distanceLabel.current.style.top = `${(midpoint.y + 1) * 50}%`;
+        }
         for (let i = 0; i < cities.length; i++) {
           const marker = markers.current[i];
           if (!marker) continue;
@@ -222,10 +229,6 @@ export default function InteractiveGlobe() {
       <div className="globe-overlay-info">
         <span className="globe-route-caption">Colombo <span>↗</span> Daegu</span>
         <p className="text-xs text-neutral-400 mt-1">Two countries. One shared ambition.</p>
-        <div className="globe-distance" aria-label={`Colombo to Daegu, approximately ${routeDistanceKm.toLocaleString("en-US")} kilometres great-circle distance`}>
-          <strong aria-hidden="true">~{distance.toLocaleString("en-US")} <span>km</span></strong>
-          <small>Colombo to Daegu · great-circle distance</small>
-        </div>
       </div>
       <div className="globe-view" data-ready={ready}>
         {!ready && (
@@ -252,6 +255,10 @@ export default function InteractiveGlobe() {
           data-lenis-prevent
         >
           <canvas ref={canvas} className="globe-map-canvas" aria-hidden="true" />
+          <div ref={distanceLabel} className="globe-path-distance" aria-label={`Colombo to Daegu, approximately ${routeDistanceKm.toLocaleString("en-US")} kilometres great-circle distance`}>
+            <strong aria-hidden="true">~{distance.toLocaleString("en-US")} <span>km</span></strong>
+            <small>Colombo ↔ Daegu</small>
+          </div>
           <svg className="globe-route-motion" viewBox="-1 -1 2 2" aria-hidden="true">
             <path className="globe-route-base" ref={path} />
             <g className="route-aircraft" ref={traveller}>

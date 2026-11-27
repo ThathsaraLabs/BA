@@ -504,3 +504,9 @@ html[data-theme="light"] .summit-footer-organizer small { color: #724c23; }
 .globe-distance small { display: block; margin-top: 5px; font-size: 10px; color: #d3d2d5; }
 html[data-theme="light"] .globe-distance strong { color: #6a4117; }
 html[data-theme="light"] .globe-distance small { color: #4d5c70; }
+.experience .globe-path-distance { position: absolute; z-index: 6; left: 50%; top: 50%; transform: translate(-50%, calc(-100% - 16px)); border: 1px solid #ff647a; border-radius: 9px; background: #08111ff5; box-shadow: 0 7px 24px #0008; padding: 9px 13px; white-space: nowrap; pointer-events: none; text-align: center; }
+.globe-path-distance[hidden] { display: none; }
+.globe-path-distance::after { content: ""; position: absolute; width: 1px; height: 16px; background: #ff647a; top: 100%; left: 50%; }
+.globe-path-distance strong { display: block; color: #fff3d9; font-size: clamp(20px, 2.5vw, 32px); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.globe-path-distance strong span { font-size: .5em; }
+.globe-path-distance small { display: block; color: #f4bac3; font-size: 10px; margin-top: 3px; }
