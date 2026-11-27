@@ -1,4 +1,4 @@
 :HL["/BA/_next/static/chunks/3z2_9_ichqg9u.css","style"]
-:HL["/BA/_next/static/chunks/30yw8ktpkkrbr.css","style"]
+:HL["/BA/_next/static/chunks/1m4pfobjyz7jv.css","style"]
 :HL["/BA/images/daegu-portal-v1.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"travel","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"uCuf-__w7x3K6RjFjY5GD"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"travel","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"wn4Axl1uRO-EqhMaEDdtT"}

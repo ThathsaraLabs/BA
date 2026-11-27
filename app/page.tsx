@@ -420,13 +420,13 @@ export default function Home() {
 
         <div className="hero-copy">
           <p className="hero-kicker">Daegu, South Korea</p>
-          <a className="summit-wordmark summit-main-logo" href="#partners">
-            <img src={sitePath("/images/booking-ministry-logo.webp")} alt="Booking Ministry" width={700} height={340} fetchPriority="high" />
-          </a>
           <h1 className="summit-wordmark">
             <img src={sitePath("/images/business-summit-logo.png")} alt="Business Summit – South Korea" width={880} height={328} fetchPriority="high" />
           </h1>
-          <a className="summit-organizer-credit" href="#partners">Organised by <strong>Booking Ministry</strong></a>
+          <a className="hero-organizer-stack" href="#partners">
+            <span>Organised by</span>
+            <img src={sitePath("/images/booking-ministry-logo.webp")} alt="Booking Ministry" width={700} height={340} />
+          </a>
 
           <div className="hero-meta">
             <p>
